@@ -1,3 +1,4 @@
+import Header from './components/Header'
 import SideNav from './components/SideNav'
 import './globals.css'
 import { Inter } from 'next/font/google'
@@ -13,14 +14,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`
-        flex bg-plat
+        flex bg-plat w-screen h-screen
         ${inter.className}
       `}>
         <div className='nav-container'>
           <SideNav />
         </div>
-        {children}
-        </body>
+        <div className='w-full md:w-5/6'>
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   )
 }

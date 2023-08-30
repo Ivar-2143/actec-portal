@@ -4,7 +4,7 @@
 
 .nav-container{
     @apply
-    fixed top-0 left-0 h-screen w-24 m-0
+    fixed md:relative top-0 left-0 h-screen w-24 m-0
     ;
 }
 .side-nav{
@@ -51,6 +51,89 @@ svg:not(:root){
     @apply
         text-xs font-bold uppercase
         group-[.nav-collapsed]/container:md:invisible
+    ;
+}
+
+/* ---- HEADER STYLES ---- */
+.header{
+    @apply
+        flex flex-col
+        w-full
+    ;
+}
+
+.header-bar{
+    @apply
+        flex justify-between items-center
+        w-full px-6 h-20 bg-primary text-white
+        
+        md:bg-plat
+    ;
+}
+
+.mobile-crumb{
+    @apply
+        flex my-2
+    ;
+}
+
+.left-side{
+    @apply
+        flex items-center gap-4 text-3xl
+    ;
+}
+.right-side{
+    @apply
+        flex items-center gap-4 text-2xl
+    ;
+}
+
+.user-header-btn{
+    @apply
+        flex
+        bg-secondary
+        rounded-full
+    ;
+}
+
+.circle{
+    @apply
+        w-12 h-12 bg-white rounded-full
+    ;
+}
+.circle-user-info{
+    @apply
+        flex flex-col justify-center items-center
+        text-xs px-3
+    ;
+}
+
+.crumbs{
+    @apply
+        flex gap-2 items-center capitalize text-gray text-xs mx-6
+        md:my-10 md:text-base
+    ;
+}
+
+
+.crumbs > svg{
+    @apply
+        align-middle text-center mx-auto
+        scale-75
+        w-4 h-4
+        md:w-8 md:h-8
+        
+        
+    ;
+}
+
+.crumbs > svg:not(:root){
+    overflow:invisible;
+}
+.crumbs > svg > path{
+    @apply
+        -translate-x-1 -translate-y-1
+        md:translate-x-1 md:translate-y-1
     ;
 }
 
