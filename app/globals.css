@@ -2,26 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.nav-container{
+    @apply
+    fixed top-0 left-0 h-screen w-24 m-0
+    ;
+}
+.side-nav{
+    @apply
+        relative flex flex-col justify-between 
+        w-[248px] h-full bg-white
+        duration-200
+    ;
+}
+.nav-collapsed{
+    @apply w-24;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.portalLinks, .accountLinks{
+    @apply
+    flex flex-col my-4 gap-4
+    ;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.sidenav-icon{
+    @apply
+    flex items-center gap-4 grow-0 shrink-0
+    p-3 mx-5 rounded-md text-gray
+
+    
+    hover:bg-primary hover:text-white
+    group-[.nav-collapsed]/container:w-14
+    group-[.nav-collapsed]/container:mx-5
+
+    ;
+}
+svg:not(:root){
+    overflow:visible;
+}
+
+.active-link{
+    @apply
+    bg-primary text-white
+    ;
+}
+
+.nav-icon-label{
+    @apply
+        text-xs font-bold uppercase
+        group-[.nav-collapsed]/container:invisible
+    ;
 }
