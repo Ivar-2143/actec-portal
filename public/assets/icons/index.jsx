@@ -10,3 +10,6 @@ export { default as SettingsIcon } from './navigation/ic_settings.svg';
 export { default as ExitIcon } from './navigation/ic_exit.svg';
 export { default as MegaphoneIcon } from './navigation/ic_announcement.svg';
 export {default as ArrowIcon} from './navigation/ic_arrow.svg';
+export {default as BellIcon} from './navigation/ic_bell.svg';
+export {default as BurgerIcon} from './navigation/ic_burger.svg';
+export {default as CloseIcon} from './navigation/ic_x.svg';
