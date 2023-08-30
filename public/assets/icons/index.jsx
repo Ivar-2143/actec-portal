@@ -1,0 +1,12 @@
+export { default as HomeIcon } from './navigation/ic_home.svg';
+export { default as RibbonIcon } from './navigation/ic_ribbon.svg';
+export { default as CalendarIcon } from './navigation/ic_calendar.svg';
+export { default as DebitCardIcon } from './navigation/ic_debit-card.svg';
+export { default as DropboxIcon } from './navigation/ic_dropbox.svg';
+export { default as FolderIcon } from './navigation/ic_folder.svg';
+export { default as StudentIcon } from './navigation/ic_student.svg';
+export { default as UserIcon } from './navigation/ic_user.svg';
+export { default as SettingsIcon } from './navigation/ic_settings.svg';
+export { default as ExitIcon } from './navigation/ic_exit.svg';
+export { default as MegaphoneIcon } from './navigation/ic_announcement.svg';
+export {default as ArrowIcon} from './navigation/ic_arrow.svg';
