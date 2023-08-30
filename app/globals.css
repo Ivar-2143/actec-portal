@@ -9,7 +9,8 @@
 }
 .side-nav{
     @apply
-        relative flex flex-col justify-between 
+        hidden md:flex flex-col justify-between
+        relative   
         w-[248px] h-full bg-white
         duration-200
     ;
@@ -31,8 +32,8 @@
 
     
     hover:bg-primary hover:text-white
-    group-[.nav-collapsed]/container:w-14
-    group-[.nav-collapsed]/container:mx-5
+    group-[.nav-collapsed]/container:md:w-14
+    group-[.nav-collapsed]/container:md:mx-5
 
     ;
 }
@@ -49,6 +50,7 @@ svg:not(:root){
 .nav-icon-label{
     @apply
         text-xs font-bold uppercase
-        group-[.nav-collapsed]/container:invisible
+        group-[.nav-collapsed]/container:md:invisible
     ;
 }
+
