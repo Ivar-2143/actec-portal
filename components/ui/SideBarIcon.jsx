@@ -8,7 +8,7 @@ export default function SideBarIcon({icon,label,link}) {
 
   return (
     <Link href={link}>
-        <div className={`sidenav-icon text-[32px] ${pathname === link? 'active-link': ''}`}>
+        <div className={`sidenav-icon ${pathname === link? 'active-link': ''}`}>
             {icon} 
             <span className='nav-icon-label'>
                     {label}

@@ -1,3 +1,4 @@
+
 import Header from '../components/Header'
 import SideNav from '@/components/SideNav'
 import './globals.css'
@@ -11,16 +12,17 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <body className={`
-        flex bg-plat w-screen h-screen
+        flex bg-plat w-screen h-screen relative overflow-auto
         ${inter.className}
       `}>
-        <div className='nav-container'>
+        <div className='nav-container z-50'>
           <SideNav />
         </div>
-        <div className='w-full md:w-[calc(100%-96px)]'>
+        <div className='w-full lg:w-[calc(100%-96px)] relative z-0'>
           <Header />
           {children}
         </div>
