@@ -21,6 +21,7 @@ module.exports = {
         lightCompany: '#AACDF8',
         transparentCompany: 'rgba(20,115,230,0.2)',
         companyAlt: '#1D5599',
+        betterGreen: '#46C296',
         darkGreen:'#70B309',
         lightGreen: '#A5FF19',
         warning: '#FFB904',
