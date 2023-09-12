@@ -13,7 +13,7 @@ export default function StudentTypeCard({value,img, title, desc, style}) {
         'border-2 border-solid border-company shadow-[0_0_4px_4px_rgba(20,115,230,0.25)]' 
         : 'border-2 border-solid border-border'}`} 
     onClick={handleClick}>
-        <div className='flex flex-row gap-4 justify-start items-center 
+        <div className='flex flex-row gap-2 justify-start items-center 
                                 w-full rounded-md relative
                                 h-full
                                 sm:flex-col '>
