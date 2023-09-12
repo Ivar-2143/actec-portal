@@ -39,7 +39,7 @@ export default function Page1({style,form}) {
     const router = useRouter();
 
   return (
-    <div className={style}>
+    <section className={style}>
         <div className='onboard-content'>
             <PageHeader
                 title={ title }
@@ -56,8 +56,8 @@ export default function Page1({style,form}) {
                         return (
                             <StudentTypeCard 
                                 key={student.value}
-                                style={`flex flex-row justify-between items-center 
-                                px-6 py-2 bg-white w-full rounded-md relative
+                                style={`flex flex-row justify-between items-center gap-2
+                                px-4 py-2 bg-white w-full rounded-md relative
                                 h-[120px]
                                 sm:h-[auto] sm:pb-[16px]
                                 sm:flex-col sm:gap-4
@@ -82,6 +82,6 @@ export default function Page1({style,form}) {
                 disabled={studentType == null || studentType == ''}
             >Next <RightArrowIcon className='ml-2 h-4 w-4 lg:ml-4 lg:h-5 lg:w-5'/></Button>
         </div>
-    </div>
+    </section>
   )
 }
