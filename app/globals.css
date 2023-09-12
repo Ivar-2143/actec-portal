@@ -179,7 +179,8 @@ svg:not(:root){
 }
 .onboard-footer{
     @apply
-    h-16 flex justify-end
+        h-auto flex justify-end max-h-40 min-h-[64px]
+        
     ;
 }
 
