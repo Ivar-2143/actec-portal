@@ -52,7 +52,7 @@ export default function EnrollmentForm() {
       >
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <Page1 form={form} style={currentPage!=1? 'hidden' : ''}/>
-          <Page2 style={currentPage!=2? 'hidden' : ''}/>
+          <Page2 form={form} style={currentPage!=2? 'hidden' : ''}/>
           <Page3 style={currentPage!=3? 'hidden' : ''}/>
           <Page4 style={currentPage!=4? 'hidden' : ''}/>
           <Page5 style={currentPage!=5? 'hidden' : ''}/>
