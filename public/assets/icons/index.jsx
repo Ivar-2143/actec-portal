@@ -13,3 +13,4 @@ export {default as ArrowIcon} from './navigation/ic_arrow.svg';
 export {default as BellIcon} from './navigation/ic_bell.svg';
 export {default as BurgerIcon} from './navigation/ic_burger.svg';
 export {default as CloseIcon} from './navigation/ic_x.svg';
+export {default as RightArrowIcon} from './navigation/ic_rightArrow.svg';
