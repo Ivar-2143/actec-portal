@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* #region */
 .nav-container{
     @apply
     lg:relative 
@@ -69,8 +71,15 @@ svg:not(:root){
         group-[.nav-collapsed]/container:md:invisible
     ;
 }
+/* #endregion */
 
-/* ---- HEADER STYLES ---- */
+
+
+
+
+
+/** ---- HEADER STYLES ---- */
+/* #region */
 .header{
     @apply
         flex flex-col
@@ -154,8 +163,36 @@ svg:not(:root){
     ;
 }
 
+/* #endregion */
+
+
+
+
+
+
+/** --- ONBOARDING STYLES ---*/
+
+.onboard-content{
+    @apply
+        relative w-full lg:px-[72px]
+    ;
+}
+.onboard-footer{
+    @apply
+    h-16 flex justify-end
+    ;
+}
+
+
+
+
+
+
+
+
 
 /* * SHADCN UI STYLES */
+/* #region */
 
 @layer base {
   :root {
@@ -212,3 +249,5 @@ svg:not(:root){
     @apply bg-background text-foreground;
   }
 }
+
+/* #endregion */
