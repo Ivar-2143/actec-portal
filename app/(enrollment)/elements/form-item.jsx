@@ -1,7 +1,7 @@
 import { FormItem, FormField, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
-export default function FormElement({control, fieldName, hint, desc }) {
+export default function FormElement({control, fieldName, hint, desc=''}) {
   return (
     <FormField
           control={control}
