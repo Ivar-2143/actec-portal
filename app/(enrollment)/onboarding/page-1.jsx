@@ -1,39 +1,20 @@
 import React from 'react'
 import PageHeader from '../elements/page-header'
 import StudentTypeCard from '../elements/student-card'
-import img_shs from '@/public/assets/student-type/SHS.png'
-import img_sem from '@/public/assets/student-type/Semestral.png'
-import img_sc from '@/public/assets/student-type/Short-Course.png'
 import { Button } from '@/components/ui/button'
-import { useStudentTypeContext } from './enrollment-form'
+import { useStudentTypeContext } from '@/lib/form-contexts'
 import { RightArrowIcon } from '@/public/assets/icons'
 import { useRouter } from 'next/navigation'
+import { studentTypes } from '@/lib/form-data'
 
 export default function Page1({style,form}) {
-    const title = "Welcome to Actec!"
+    const title = "Welcome to ACTEC!"
     const subTitle = "Tell us about yourself."
     const body = "We warmly welcome Junior high school completers, senior high school graduates, college transferees, and foreign applicants to our campuses.\n\n" +
 
     "Kindly fill-out the online application form for a fast and efficient admission process."
 
-    const studentTypes = [{
-            value: 'shs',
-            img:img_shs,
-            title: "Senior High School",
-            desc:'ex. ICT, HR Servicing, and Culinary'
-        },{
-            value: 'semestral',
-            img:img_sem,
-            title: "Semestral",
-            desc:'ex. 2yr-Courses'
-
-        },{
-            value: 'shortcourse',
-            img:img_sc,
-            title: "Short Course",
-            desc:'ex. Tesda Courses'
-
-        }];
+    
         
     const {studentType} = useStudentTypeContext();
     const router = useRouter();
@@ -55,6 +36,7 @@ export default function Page1({style,form}) {
                     {studentTypes.map(student =>{
                         return (
                             <StudentTypeCard 
+                                form={form}
                                 key={student.value}
                                 style={`flex flex-row justify-between items-center gap-2
                                 px-4 py-2 bg-white w-full rounded-md relative
@@ -72,7 +54,7 @@ export default function Page1({style,form}) {
                 </div>
             </div>
         </div>
-        <div className='onboard-content onboard-footer '>
+        <div className='onboard-content onboard-footer justify-end '>
             <Button
                 className='md:h-10 md:px-4 md:py-2 
                 lg:text-base lg:h-11 lg:rounded-md lg:px-8'
