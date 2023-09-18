@@ -1,13 +1,15 @@
 import Image from 'next/image'
-import { useStudentTypeContext } from '../onboarding/enrollment-form'
+import { useStudentTypeContext } from '@/lib/form-contexts';
 import { Button } from '@/components/ui/button';
-export default function StudentTypeCard({value,img, title, desc, style}) {
+
+export default function StudentTypeCard({form,value,img, title, desc, style}) {
     const {studentType, setStudentType} = useStudentTypeContext();
     const handleClick = () =>{
             setStudentType(value);
+            form.setValue('student_type',studentType);
     }
 
-    console.log(studentType === value);
+    // console.log(studentType === value);
   return (
     <div className={`${style} ${(studentType == value)? 
         'border-2 border-solid border-company shadow-[0_0_4px_4px_rgba(20,115,230,0.25)]' 
