@@ -42,6 +42,7 @@ import { Check, ChevronsUpDown } from "lucide-react"
 */
 export default function ComboBox({form, fieldName, desc='',data}) {
     const label = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
+    
   return (
     <FormField
         control={form.control}
@@ -81,6 +82,7 @@ export default function ComboBox({form, fieldName, desc='',data}) {
                                 value={data.label}
                                 key={data.value}
                                 onSelect={() => {
+                                    form.clearErrors(fieldName)
                                     form.setValue(fieldName, data.value)
                                 }}
                                 >
