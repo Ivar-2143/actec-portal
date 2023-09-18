@@ -1,14 +1,16 @@
 import { FormItem, FormField, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { useFormContext } from "react-hook-form";
 
-export default function FormElement({control, fieldName, hint, desc='', style='w-full'}) {
+export default function FormElement({accesoryKey='', fieldName, label='', hint, desc='', style='w-full', optional=false}) {
+  const form = useFormContext();
   return (
     <FormField
-          control={control}
-          name={fieldName}
+          control={form.control}
+          name={!accesoryKey? fieldName: accesoryKey }
           render={({ field }) => (
             <FormItem className={style}>
-                <FormLabel className='capitalize'>{fieldName}</FormLabel>
+                <FormLabel className='capitalize'>{fieldName} {optional && (<span className="text-gray font-light"> (Optional) </span>)}</FormLabel>
                 <FormControl>
                     <Input placeholder={hint} {...field} />
                 </FormControl>

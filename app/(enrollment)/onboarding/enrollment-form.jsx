@@ -40,25 +40,25 @@ export default function EnrollmentForm() {
     //console.log(studentType);
     console.log("current page: " + currentPage);
   return (
-    <Form {...form}>
-      <StudentTypeContext.Provider
-        value={{
-            studentType,
-            setStudentType
-        }}
-      >
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <Page1 form={form} style={currentPage!=1? 'hidden' : 'mt-0'}/>
-          <Page2 form={form} style={currentPage!=2? 'hidden' : 'mt-0'}/>
-          <Page3 form={form} style={currentPage!=3? 'hidden' : 'mt-0'}/>
-          <Page4 form={form} style={currentPage!=4? 'hidden' : 'mt-0'}/>
-          <Page5 form={form} style={currentPage!=5? 'hidden' : 'mt-0'}/>
-          <Page6 form={form} style={currentPage!=6? 'hidden' : 'mt-0'}/>
-          <Page7 form={form} style={currentPage!=7? 'hidden' : 'mt-0'}/>
-          <Page8 form={form} style={currentPage!=8? 'hidden' : 'mt-0'}/>
-          <Page9 form={form} style={currentPage!=9? 'hidden' : 'mt-0'}/>
-        </form>
-      </StudentTypeContext.Provider>
-    </Form>
+      <Form {...form}>
+        <StudentTypeContext.Provider
+          value={{
+              studentType,
+              setStudentType
+          }}
+        >
+          <form onSubmit={form.handleSubmit(onSubmit)} className="">
+            <Page1 style={currentPage!=1? 'hidden' : 'lg:my-16'}/>
+            <Page2 style={currentPage!=2? 'hidden' : 'lg:my-16'}/>
+            <Page3 style={currentPage!=3? 'hidden' : 'lg:my-16'}/>
+            <Page4 style={currentPage!=4? 'hidden' : 'lg:my-16'}/>
+            <Page5 style={currentPage!=5? 'hidden' : 'lg:my-16'}/>
+            <Page6 style={currentPage!=6? 'hidden' : 'lg:my-16'}/>
+            <Page7 style={currentPage!=7? 'hidden' : 'lg:my-16'}/>
+            <Page8 style={currentPage!=8? 'hidden' : 'lg:my-16'}/>
+            <Page9 style={currentPage!=9? 'hidden' : 'lg:my-16'}/>
+          </form>
+        </StudentTypeContext.Provider>
+      </Form>
   )
 }

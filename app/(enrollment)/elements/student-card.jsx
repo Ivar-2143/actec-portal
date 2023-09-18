@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import { useStudentTypeContext } from '@/lib/form-contexts';
 import { Button } from '@/components/ui/button';
+import { useFormContext } from 'react-hook-form';
 
-export default function StudentTypeCard({form,value,img, title, desc, style}) {
+export default function StudentTypeCard({value,img, title, desc, style}) {
+    const form = useFormContext();
     const {studentType, setStudentType} = useStudentTypeContext();
     const handleClick = () =>{
             setStudentType(value);

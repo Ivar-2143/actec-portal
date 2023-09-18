@@ -22,6 +22,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { Check, ChevronsUpDown } from "lucide-react"
+import { useFormContext } from "react-hook-form"
 
 
 /*
@@ -40,9 +41,10 @@ import { Check, ChevronsUpDown } from "lucide-react"
         { label: "Chinese", value: "zh" },
         
 */
-export default function ComboBox({form, fieldName, desc='',data}) {
+export default function ComboBox({fieldName, desc='',data}) {
     const label = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
-    
+    const form = useFormContext();
+
   return (
     <FormField
         control={form.control}
