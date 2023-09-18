@@ -5,9 +5,8 @@ import {
 } from "@/components/ui/form"
 import { useForm } from "react-hook-form"
 import Page1 from "./page-1"
-import { useState } from "react"
+import { createContext, useContext, useState } from "react"
 import { useSearchParams } from "next/navigation"
-import { zodResolver } from "@hookform/resolvers/zod";
 import Page2 from "./page-2"
 import Page3 from "./page-3"
 import Page4 from "./page-4"
@@ -16,29 +15,33 @@ import Page6 from "./page-6"
 import Page7 from "./page-7"
 import Page8 from "./page-8"
 import Page9 from "./page-9"
-import { FormSchema } from "@/lib/valibot-schema"
-import { StudentTypeContext } from "@/lib/form-contexts"
+
+export const StudentTypeContext = createContext(null);
+
+export function useStudentTypeContext() {
+    const context = useContext(StudentTypeContext);
+    if(!context) {
+        throw new Error("useStudentTypeContext must be used within a ThemeContextProvider");
+    }
+
+    return context;
+
+}
 
 function onSubmit(){
     console.log("submit");
 }
 
 export default function EnrollmentForm() {
-    const form = useForm({
-      resolver: zodResolver(FormSchema),
-      defaultValues: {
-        items: []
-      }
-    });
+    const form = useForm();
     const searchParams = useSearchParams();
     const currentPage = searchParams.get('page');
     const endPage = 9;
     const startPage = 1;
     const [studentType, setStudentType] = useState('');
-    //const [date, setDate] = useState('');
 
-    // console.log(studentType);
-    console.log('current page: '+currentPage);
+    console.log(studentType);
+    console.log(currentPage);
   return (
     <Form {...form}>
       <StudentTypeContext.Provider
@@ -49,14 +52,14 @@ export default function EnrollmentForm() {
       >
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <Page1 form={form} style={currentPage!=1? 'hidden' : ''}/>
-          <Page2 form={form} style={currentPage!=2? 'hidden' : 'mt-0'}/>
-          <Page3 form={form} style={currentPage!=3? 'hidden' : 'mt-0'}/>
-          <Page4 form={form} style={currentPage!=4? 'hidden' : 'mt-0'}/>
-          <Page5 form={form} style={currentPage!=5? 'hidden' : 'mt-0'}/>
-          <Page6 form={form} style={currentPage!=6? 'hidden' : 'mt-0'}/>
-          <Page7 form={form} style={currentPage!=7? 'hidden' : 'mt-0'}/>
-          <Page8 form={form} style={currentPage!=8? 'hidden' : 'mt-0'}/>
-          <Page9 form={form} style={currentPage!=9? 'hidden' : 'mt-0'}/>
+          <Page2 form={form} style={currentPage!=2? 'hidden' : ''}/>
+          <Page3 style={currentPage!=3? 'hidden' : ''}/>
+          <Page4 style={currentPage!=4? 'hidden' : ''}/>
+          <Page5 style={currentPage!=5? 'hidden' : ''}/>
+          <Page6 style={currentPage!=6? 'hidden' : ''}/>
+          <Page7 style={currentPage!=7? 'hidden' : ''}/>
+          <Page8 style={currentPage!=8? 'hidden' : ''}/>
+          <Page9 style={currentPage!=9? 'hidden' : ''}/>
         </form>
       </StudentTypeContext.Provider>
     </Form>
