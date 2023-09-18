@@ -22,7 +22,7 @@ export default function OnboardingLayout({ children }) {
       `}>
         <div className='relative mb-4   bg-white
         sm:h-[144px] sm:my-4 sm:mx-6 sm:px-4 sm:max-lg:rounded-md sm:overflow-hidden
-        lg:left-0 lg:top-0 lg:mx-0 lg:my-0 lg:w-[480px] lg:max-w-[640px] '>
+        lg:left-0 lg:top-0 lg:mx-0 lg:my-0 lg:w-[480px] lg:max-w-[640px] sm:min-h-[144px] '>
           <NavHead />
         </div>
         <div className='w-full px-6 relative z-0
