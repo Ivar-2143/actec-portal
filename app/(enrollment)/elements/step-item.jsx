@@ -1,7 +1,8 @@
 import { Badge } from '@/components/ui/badge'
 import React from 'react'
 
-export default function StepItem({title}) {
+export default function StepItem({title, step}) {
+  
   return (
     <div className='flex flex-row gap-4 items-center 
                 my-auto mx-6
@@ -16,7 +17,7 @@ export default function StepItem({title}) {
         </div>
         <div className="step-title 
         flex flex-col text-xl font-medium sm:text-base">
-            <span className='text-xs sm:text-[10px] text-gray'>Step {0}/9</span>
+            <span className='text-xs sm:text-[10px] text-gray'>Step {step}/9</span>
             {title}
         </div>
         <Badge className='invisible sm:visible text-[10px]' variant='default'>Completed</Badge>
