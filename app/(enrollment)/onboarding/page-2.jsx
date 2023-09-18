@@ -2,14 +2,13 @@ import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessa
 import PageHeader from "../elements/page-header"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import ComboBox from "../elements/comboBox"
-import { Button } from "@/components/ui/button"
-import { RightArrowIcon } from "@/public/assets/icons"
-import { useRouter } from "next/navigation"
 import FormElement from "../elements/form-item"
 import { Checkbox } from "@/components/ui/checkbox"
 import { checkGroupData } from "@/lib/form-data"
+import { useFormContext } from "react-hook-form"
+import FormFooterButtons from "../elements/form-footer"
 
-export default function Page2({form, style}) {
+export default function Page2({ style}) {
   const title = "A few things to start out"
   const body = "These information will help us classify you more and assign you to a proper place to learn."
 
@@ -18,9 +17,8 @@ export default function Page2({form, style}) {
     {label:'Information and Communication Technology', value:'ict'}
   ];
 
-  
-
-  const router = useRouter();
+  const form = useFormContext();
+  const disable = !form.getValues('course') || !form.getValues('branch')|| form.getValues('items').length < 1;
 
   return (
     <section className={style}>
@@ -54,10 +52,10 @@ export default function Page2({form, style}) {
                 </FormItem>
               )}
           />
-          <ComboBox data={comboBoxData} form={form} fieldName='course'/>
+          <ComboBox data={comboBoxData} fieldName='course'/>
           <div className="w-full relative sm:flex gap-4">
-            <FormElement control={form.control} fieldName='scholarship code' hint='0x000' />
-            <FormElement control={form.control} fieldName='referral code' hint='02-000-XXXXXX' />
+            <FormElement fieldName='scholarship code' hint='0x000' />
+            <FormElement fieldName='referral code' hint='02-000-XXXXXX' />
           </div>
           <div className="my-10 sm:my-16">
             <FormField
@@ -113,25 +111,7 @@ export default function Page2({form, style}) {
           </div>
         </div>
       </div>
-      <div className='onboard-content onboard-footer justify-between'>
-
-          <Button
-                className='md:h-10 md:px-4 md:py-2 
-                lg:text-base lg:h-11 lg:rounded-md lg:px-8'
-                variant="ghost"
-                size="sm"
-                onClick={() => router.back() }
-            >Previous Step</Button>
-            <Button
-                className='md:h-10 md:px-4 md:py-2 
-                lg:text-base lg:h-11 lg:rounded-md lg:px-8'
-                variant="default"
-                size="sm"
-                disabled={form.getValues('course') === undefined || form.getValues('branch') === undefined || form.getValues('items').length < 1} 
-                onClick={() => router.push('?page=3') }
-                // disabled={studentType == null || studentType == ''}
-            >Next <RightArrowIcon className='ml-2 h-4 w-4 lg:ml-4 lg:h-5 lg:w-5'/></Button>
-        </div>
+      <FormFooterButtons disable={disable} page={3}/>
     </section>
   )
 }

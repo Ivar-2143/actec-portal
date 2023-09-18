@@ -1,23 +1,19 @@
 import React from 'react'
 import PageHeader from '../elements/page-header'
 import StudentTypeCard from '../elements/student-card'
-import { Button } from '@/components/ui/button'
 import { useStudentTypeContext } from '@/lib/form-contexts'
-import { RightArrowIcon } from '@/public/assets/icons'
-import { useRouter } from 'next/navigation'
 import { studentTypes } from '@/lib/form-data'
+import FormFooterButtons from '../elements/form-footer'
 
-export default function Page1({style,form}) {
-    const title = "Welcome to ACTEC!"
+export default function Page1({style}) {
+    const title = "👋 Welcome to ACTEC!"
     const subTitle = "Tell us about yourself."
     const body = "We warmly welcome Junior high school completers, senior high school graduates, college transferees, and foreign applicants to our campuses.\n\n" +
 
     "Kindly fill-out the online application form for a fast and efficient admission process."
 
-    
-        
     const {studentType} = useStudentTypeContext();
-    const router = useRouter();
+    const disable = !studentType;
 
   return (
     <section className={style}>
@@ -35,8 +31,7 @@ export default function Page1({style,form}) {
                 '>
                     {studentTypes.map(student =>{
                         return (
-                            <StudentTypeCard 
-                                form={form}
+                            <StudentTypeCard
                                 key={student.value}
                                 style={`flex flex-row justify-between items-center gap-2
                                 px-4 py-2 bg-white w-full rounded-md relative
@@ -54,16 +49,7 @@ export default function Page1({style,form}) {
                 </div>
             </div>
         </div>
-        <div className='onboard-content onboard-footer justify-end '>
-            <Button
-                className='md:h-10 md:px-4 md:py-2 
-                lg:text-base lg:h-11 lg:rounded-md lg:px-8'
-                variant="default"
-                size="sm"
-                onClick={() => router.push('?page=2') }
-                disabled={studentType == null || studentType == ''}
-            >Next <RightArrowIcon className='ml-2 h-4 w-4 lg:ml-4 lg:h-5 lg:w-5'/></Button>
-        </div>
+        <FormFooterButtons withPrev={false} disable={disable} page={2}/>
     </section>
   )
 }

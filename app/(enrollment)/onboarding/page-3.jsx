@@ -5,22 +5,19 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
 import { cn } from '@/lib/utils'
-import { CalendarIcon, RightArrowIcon } from '@/public/assets/icons'
-import { useState } from 'react'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Check, ChevronsUpDown } from 'lucide-react'
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from '@/components/ui/command'
-import { years } from '@/lib/form-data';
+import { CalendarIcon} from '@/public/assets/icons'
 import { format } from 'date-fns';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { useRouter } from 'next/navigation'
 import PageHeader from '../elements/page-header'
+import { useFormContext } from 'react-hook-form'
+import FormFooterButtons from '../elements/form-footer'
 
-export default function Page3({form,style}) {
-  const title = "A few things to start out"
-  const body = "These information will help us classify you more and assign you to a proper place to learn."
+export default function Page3({style}) {
+  const title = "A bit about you."
+  const body = "We need your personal data to complete your learner’s profile."
 
-  const router = useRouter();
+  const form = useFormContext();
+
 
   return (
     <section className={style}> 
@@ -30,13 +27,13 @@ export default function Page3({form,style}) {
           body={body}
         />
         <div className='my-6'>
-          <FormElement control={form.control} fieldName='first name' hint='First Name'/>
+          <FormElement fieldName='first name' hint='First Name'/>
           <div className='w-full sm:flex gap-4'>
-            <FormElement control={form.control} fieldName='middle name' hint='Middle Name'/>
-            <FormElement control={form.control} fieldName='last name' hint='Last Name'/>
+            <FormElement fieldName='middle name' hint='Middle Name'/>
+            <FormElement fieldName='last name' hint='Last Name'/>
           </div>
           <div className='w-5/5 sm:flex gap-4'>
-            <FormElement control={form.control} fieldName='age' hint='Age' style='w-full sm:w-1/5'/>
+            <FormElement fieldName='age' hint='Age' style='w-full sm:w-1/5'/>
             <FormField
               control={form.control}
               name="date of birth"
@@ -77,69 +74,51 @@ export default function Page3({form,style}) {
                     </PopoverContent>
                   </Popover>
                   <FormDescription>
-          
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
             />
-        </div>
-        </div>
-        <FormField
-            control={form.control}
-            name="sex"
-            render={({ field }) => (
-              <FormItem className="space-y-2 mb-4">
-                <FormLabel>Sex</FormLabel>
-                <FormControl>
-                  <RadioGroup
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                    className="flex flex-col space-y-1"
-                  >
-                    <FormItem className="flex items-center space-x-3 space-y-0">
-                      <FormControl>
-                        <RadioGroupItem value="male" />
-                      </FormControl>
-                      <FormLabel className="font-normal">
-                        Male
-                      </FormLabel>
-                    </FormItem>
-                    <FormItem className="flex items-center space-x-3 space-y-0">
-                      <FormControl>
-                        <RadioGroupItem value="female" />
-                      </FormControl>
-                      <FormLabel className="font-normal">Female</FormLabel>
-                    </FormItem>
-                  </RadioGroup>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+          </div>
+        
+          <FormField
+              control={form.control}
+              name="sex"
+              render={({ field }) => (
+                <FormItem className="space-y-2 mb-4">
+                  <FormLabel>Sex</FormLabel>
+                  <FormControl>
+                    <RadioGroup
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                      className="flex flex-col space-y-1"
+                    >
+                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="male" />
+                        </FormControl>
+                        <FormLabel className="font-normal">
+                          Male
+                        </FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="female" />
+                        </FormControl>
+                        <FormLabel className="font-normal">Female</FormLabel>
+                      </FormItem>
+                    </RadioGroup>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
           />
-          <FormElement control={form.control} fieldName='civil status' hint='ex. Married or Single'/>
-          <FormElement control={form.control} fieldName='citizenship' hint=''/>
-          <FormElement control={form.control} fieldName='religion' hint=''/>
+          <FormElement fieldName='civil status' hint='ex. Married or Single'/>
+          <FormElement fieldName='citizenship' hint=''/>
+          <FormElement fieldName='religion' hint=''/>
         </div>
-        <div className='onboard-content onboard-footer justify-between'>
-
-          <Button
-                className='md:h-10 md:px-4 md:py-2 
-                lg:text-base lg:h-11 lg:rounded-md lg:px-8'
-                variant="ghost"
-                size="sm"
-                onClick={() => router.back() }
-            >Previous Step</Button>
-            <Button
-                className='md:h-10 md:px-4 md:py-2 
-                lg:text-base lg:h-11 lg:rounded-md lg:px-8'
-                variant="default"
-                size="sm"
-                disabled={form.getValues('course') === undefined || form.getValues('branch') === undefined || form.getValues('items').length < 1} 
-                onClick={() => router.push('?page=4') }
-                // disabled={studentType == null || studentType == ''}
-            >Next <RightArrowIcon className='ml-2 h-4 w-4 lg:ml-4 lg:h-5 lg:w-5'/></Button>
       </div>
+      <FormFooterButtons page={4}/>
     </section>
   )
 }
