@@ -7,7 +7,7 @@ export default function NavHead() {
 
     <>
       {/* Tablets */}
-      <div className='hidden sm:max-lg:flex gap-2 w-full overflow-hidden'>
+      <div className='hidden sm:max-lg:flex gap-2 w-full overflow-hidden min-h-144px'>
         <StepItem title='Student Type' />
         <StepItem title='Program' />
         <StepItem title='About You' />
