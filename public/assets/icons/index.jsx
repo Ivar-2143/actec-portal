@@ -14,3 +14,5 @@ export {default as BellIcon} from './navigation/ic_bell.svg';
 export {default as BurgerIcon} from './navigation/ic_burger.svg';
 export {default as CloseIcon} from './navigation/ic_x.svg';
 export {default as RightArrowIcon} from './navigation/ic_rightArrow.svg';
+export {default as UploadIcon} from './navigation/ic_cloud-upload.svg';
+export {default as DropArrowIcon} from './navigation/ic_arrow-drop.svg';
