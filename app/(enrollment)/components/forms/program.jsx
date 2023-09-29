@@ -1,56 +1,64 @@
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import PageHeader from "../elements/page-header"
+"use client"
+
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import ComboBox from "../elements/comboBox"
-import FormElement from "../elements/form-item"
+import ComboBox from "../ui/comboBox"
+import FormElement from "../ui/form-item"
 import { Checkbox } from "@/components/ui/checkbox"
 import { checkGroupData } from "@/lib/form-data"
-import { useFormContext } from "react-hook-form"
-import FormFooterButtons from "../elements/form-footer"
+import { useForm } from "react-hook-form"
+import FormFooterButtons from "../form-footer"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { ProgramSchema } from "@/lib/schema"
+import { useRouter } from "next/navigation"
 
-export default function Page2({ style}) {
-  const title = "A few things to start out"
-  const body = "These information will help us classify you more and assign you to a proper place to learn."
+export default function Program({style}) {
+  const router = useRouter();
 
   const comboBoxData = [
     {label:'Caregiving', value:'cg'},
     {label:'Information and Communication Technology', value:'ict'}
   ];
 
-  const form = useFormContext();
-  const disable = !form.getValues('course') || !form.getValues('branch')|| form.getValues('items').length < 1;
+  const onSubmit = (data) => {
+    console.log(data);
+    router.push(`?page=${3}`);
+
+  }
+  const form = useForm({
+    resolver: zodResolver(ProgramSchema),
+    defaultValues:{
+      items: []
+    }
+
+  });
 
   return (
-    <section className={style}>
-      <div className="onboard-content">
-        <PageHeader
-                  title={ title }
-                  body={body}
-              />
-
-        <div className="my-6">
+    <section className={`${style} my-6`}>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
-              control={form.control}
-              name="branch"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Branch</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a branch" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="caloocan">Caloocan</SelectItem>
-                      <SelectItem value="apalit">Apalit</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <FormDescription>
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
+            control={form.control}
+            name="branch"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Branch</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a branch" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="caloocan">Caloocan</SelectItem>
+                    <SelectItem value="apalit">Apalit</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormDescription>
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
           />
           <ComboBox data={comboBoxData} fieldName='course'/>
           <div className="w-full relative sm:flex gap-4">
@@ -109,9 +117,11 @@ export default function Page2({ style}) {
               )}
             />
           </div>
-        </div>
-      </div>
-      <FormFooterButtons disable={disable} page={3}/>
+          <FormFooterButtons>
+            Next
+          </FormFooterButtons>
+        </form>
+      </Form>
     </section>
   )
 }

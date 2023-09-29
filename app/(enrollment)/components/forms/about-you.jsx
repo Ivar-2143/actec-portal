@@ -1,6 +1,7 @@
+"use client"
 
-import FormElement from '../elements/form-item'
-import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import FormElement from '../ui/form-item'
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
@@ -8,25 +9,30 @@ import { cn } from '@/lib/utils'
 import { CalendarIcon} from '@/public/assets/icons'
 import { format } from 'date-fns';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import PageHeader from '../elements/page-header'
-import { useFormContext } from 'react-hook-form'
-import FormFooterButtons from '../elements/form-footer'
+import FormFooterButtons from '../form-footer'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useRouter } from 'next/navigation'
 
-export default function Page3({style}) {
-  const title = "A bit about you."
-  const body = "We need your personal data to complete your learner’s profile."
+export default function AboutYou({style}) {
+  const form = useForm();
+  // {
+  //   resolver: zodResolver(),
+  //   defaultValues:{
 
-  const form = useFormContext();
+  //   }
+  // }
+  const router = useRouter();
 
+  const onSubmit = (formData)=>{
+    console.log(formData)
+    router.push(`?${new URLSearchParams({page:4})}`);
+  }
 
   return (
-    <section className={style}> 
-      <div className='onboard-content'>
-        <PageHeader
-          title={title}
-          body={body}
-        />
-        <div className='my-6'>
+    <section className={`${style} my-6`}> 
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormElement fieldName='first name' hint='First Name'/>
           <div className='w-full sm:flex gap-4'>
             <FormElement fieldName='middle name' hint='Middle Name'/>
@@ -80,7 +86,7 @@ export default function Page3({style}) {
               )}
             />
           </div>
-        
+          
           <FormField
               control={form.control}
               name="sex"
@@ -116,9 +122,11 @@ export default function Page3({style}) {
           <FormElement fieldName='civil status' hint='ex. Married or Single'/>
           <FormElement fieldName='citizenship' hint=''/>
           <FormElement fieldName='religion' hint=''/>
-        </div>
-      </div>
-      <FormFooterButtons page={4}/>
+          <FormFooterButtons>
+            Next
+          </FormFooterButtons>
+        </form>
+      </Form>
     </section>
   )
 }

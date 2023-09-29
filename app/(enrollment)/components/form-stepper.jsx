@@ -1,20 +1,15 @@
-"use client"
 
 import { Progress } from '@/components/ui/progress'
-import React from 'react'
-import StepItem from './step-item'
-import { useSearchParams } from 'next/navigation';
+import StepItem from './ui/step-item';
 import { PageStepTitles } from '@/lib/form-data';
 
-export default function NavHead() {
-  const searchParams = useSearchParams();
-  const currentPage = searchParams.get('page');
+export default function FormStepper({page}) {
 
-  
 
   return (
-
-    <>
+    <nav className='relative mb-4   bg-white
+    sm:h-[144px] sm:my-4 sm:mx-6 sm:px-4 sm:max-lg:rounded-md sm:overflow-hidden
+    lg:left-0 lg:top-0 lg:mx-0 lg:my-0 lg:w-[480px] lg:max-w-[640px] sm:min-h-[144px] '>
       {/* Tablets */}
       <div className='hidden sm:max-lg:flex gap-2 w-full overflow-hidden'>
         <StepItem title='Student Type' step={1}/>
@@ -31,11 +26,11 @@ export default function NavHead() {
       {/* mobile */}
       <div className='flex flex-col justify-between w-full bg-white h-[88px] sm:hidden'>
           <div className='h-3/4 my-auto w-full'>
-            <StepItem title={PageStepTitles[(currentPage-1)]} step={currentPage} />
+            <StepItem title={PageStepTitles[(page-1)]} step={page} />
             </div>
-          <Progress className='rounded-none h-2' value={((currentPage/9)*100)}/>
+          <Progress className='rounded-none h-2' value={((page/9)*100)}/>
       </div>
       
-    </>
+    </nav>
   )
 }

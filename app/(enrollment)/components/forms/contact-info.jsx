@@ -1,22 +1,25 @@
+"use client"
 
-import PageHeader from "../elements/page-header";
-import FormElement from "../elements/form-item";
-import FormFooterButtons from "../elements/form-footer";
+import FormElement from "../ui/form-item";
+import FormFooterButtons from "../form-footer";
+import { Form } from "@/components/ui/form";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 
-export default function Page5({style}) {
-  const title = "📞 How can we reach you?"
-  const body = "Just err.. you know? So we could have some chitchat sometimes... It’s good to have some healthy conversations together, we will send you updates on how we’re doing and you won’t be able to reply at all!"
-  
+export default function ContactInfo({style}) {
+  const form = useForm();
+  const router = useRouter();
 
+  const onSubmit = (formData) =>{
+    console.log(formData);
+
+    router.push(`?${new URLSearchParams({page:6})}`);
+  }
 
   return (
-    <section className={style}>
-      <div className="onboard-content">
-        <PageHeader
-          title={title}
-          body={body}
-        />
-        <div className="my-10">
+    <section className={`${style} my-6`}>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="my-8">
             <h4 className='text-lg text-gray font-medium my-2'>Personal</h4>
             <div className="w-full sm:flex gap-4">
@@ -38,10 +41,11 @@ export default function Page5({style}) {
             </div>
             <FormElement accesoryKey="guardian_email" fieldName="email" hint='' />
           </div>
-        </div>
-        
-      </div>
-      <FormFooterButtons page={6} />
+          <FormFooterButtons>
+            Next
+          </FormFooterButtons>
+        </form>
+      </Form>
         
     </section>
   )

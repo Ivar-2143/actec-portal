@@ -1,6 +1,9 @@
-import React from 'react'
+import { formHeaders } from "@/lib/form-data"
 
-export default function PageHeader({title, subTitle='', body}) {
+export default function PageHeader({page}) {
+  
+  const {title,subTitle,body} = formHeaders[page-1]
+
   return (
     <div className='w-full sm:max-lg:px-4'>
         <h2 className='text-2xl font-medium'>{title}</h2>
