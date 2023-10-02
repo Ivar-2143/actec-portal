@@ -7,7 +7,7 @@ export default function StudentTypeCard({student, style,click, selected}) {
     return (
         <div className={`${style} ${(selected == value)? 
             'border-2 border-solid border-company shadow-[0_0_4px_4px_rgba(20,115,230,0.25)]' 
-            : 'border-2 border-solid border-border'} transition-all cursor-pointer`} 
+            : 'border-2 border-solid border-border'} transition-100 ease-out cursor-pointer`} 
         onClick={()=> click(value) }>
             <div className='flex flex-row gap-2 justify-start items-center 
                                     w-full rounded-md relative
