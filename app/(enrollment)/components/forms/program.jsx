@@ -9,7 +9,7 @@ import { checkGroupData } from "@/lib/form-data"
 import { useForm } from "react-hook-form"
 import FormFooterButtons from "../form-footer"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { ProgramSchema } from "@/lib/schema"
+import { ProgramSchema } from "@/lib/validation-schema"
 import { useRouter } from "next/navigation"
 
 export default function Program({style}) {

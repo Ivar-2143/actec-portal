@@ -13,9 +13,12 @@ import FormFooterButtons from '../form-footer'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
+import { PersonalInfoSchema } from '@/lib/validation-schema'
 
 export default function AboutYou({style}) {
-  const form = useForm();
+  const form = useForm({
+    resolver: zodResolver(PersonalInfoSchema)
+  });
   // {
   //   resolver: zodResolver(),
   //   defaultValues:{
@@ -39,7 +42,7 @@ export default function AboutYou({style}) {
             <FormElement fieldName='last name' hint='Last Name'/>
           </div>
           <div className='w-5/5 sm:flex gap-4'>
-            <FormElement fieldName='age' hint='Age' style='w-full sm:w-1/5'/>
+            <FormElement fieldName='age'  hint='Age' style='w-full sm:w-1/5' type="number"/>
             <FormField
               control={form.control}
               name="date of birth"

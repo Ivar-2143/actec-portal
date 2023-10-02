@@ -6,9 +6,13 @@ import FormFooterButtons from "../form-footer";
 import { Form } from "@/components/ui/form";
 import { useFormData } from "@/lib/form-contexts";
 import { useRouter } from "next/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { AddressSchema } from "@/lib/validation-schema";
 
 export default function Address({style}) {
-  const form = useForm();
+  const form = useForm({
+    resolver: zodResolver(AddressSchema),
+  });
   const router = useRouter();
   const {setFormValues} = useFormData();
 

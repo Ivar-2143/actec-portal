@@ -6,9 +6,13 @@ import FormElement from '../ui/form-item'
 import { Form } from '@/components/ui/form'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { EducationSchema } from '@/lib/validation-schema'
 
 export default function EducationAttainment({style}) {
-  const form = useForm();
+  const form = useForm({
+    resolver: zodResolver(EducationSchema)
+  });
   const router = useRouter();
 
   const onSubmit = (formData) => {
