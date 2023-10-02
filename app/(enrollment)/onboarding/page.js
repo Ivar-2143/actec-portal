@@ -16,7 +16,7 @@ export default function Onboarding({params,searchParams}) {
     <main className='flex flex-col gap-2 lg:flex-row h-full w-full relative'>
       <FormStepper page={currentPage} />
       <div className='w-full px-6 relative z-0
-                lg:px-[104px]'>
+                lg:px-[104px] lg:py-16'>
           <PageHeader page={currentPage}/>
           <FormProvider>
             <StudentType style={currentPage!=1? 'hidden' : ''} />

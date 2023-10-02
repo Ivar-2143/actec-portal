@@ -174,7 +174,7 @@ svg:not(:root){
 
 .onboard-content{
     @apply
-        relative w-full lg:px-[72px]
+        relative w-full 
     ;
 }
 .onboard-footer{
