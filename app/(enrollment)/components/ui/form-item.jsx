@@ -2,7 +2,7 @@ import { FormItem, FormField, FormLabel, FormControl, FormDescription, FormMessa
 import { Input } from "@/components/ui/input"
 import { useFormContext } from "react-hook-form";
 
-export default function FormElement({accesoryKey='', fieldName, label='', hint, desc='', style='w-full', optional=false, disable=false}) {
+export default function FormElement({accesoryKey='', fieldName, label='', hint, desc='', style='w-full', optional=false, disable=false, type='text'}) {
   const form = useFormContext();
   return (
     <FormField
@@ -12,7 +12,7 @@ export default function FormElement({accesoryKey='', fieldName, label='', hint, 
             <FormItem className={style}>
                 <FormLabel className='capitalize'>{fieldName} {optional && (<span className="text-gray font-light"> (Optional) </span>)}</FormLabel>
                 <FormControl>
-                    <Input placeholder={hint} {...field} disabled={disable} />
+                    <Input placeholder={hint}  disabled={disable} type={type} {...field} />
                 </FormControl>
                 <FormDescription>
                     {desc}
