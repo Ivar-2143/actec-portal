@@ -184,6 +184,18 @@ svg:not(:root){
     ;
 }
 
+.summary-value{
+    @apply
+        font-light text-darkGray
+    ;
+}
+
+.summary-title{
+    @apply
+        capitalize font-medium text-darkGray
+    ;
+}
+
 
 
 
