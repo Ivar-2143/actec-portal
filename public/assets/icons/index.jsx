@@ -18,3 +18,4 @@ export {default as UploadIcon} from './navigation/ic_cloud-upload.svg';
 export {default as DropArrowIcon} from './navigation/ic_arrow-drop.svg';
 export {default as IdeaBulbIcon} from './navigation/ic_idea-bulb.svg';
 export {default as PenIcon} from './buttons/ic_pen.svg';
+export {default as TrashIcon} from './buttons/ic_trash.svg';
