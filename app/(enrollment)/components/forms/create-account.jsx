@@ -8,13 +8,21 @@ import { RightArrowIcon } from '@/public/assets/icons'
 import { Form } from '@/components/ui/form'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
+import { useFormData } from '@/lib/form-contexts'
 
 export default function CreateAccount({style}) {
   const form = useForm();
   const router = useRouter();
+  const {setFormValues} = useFormData();
 
   const onSubmit = (formData) =>{
     console.log(formData);
+
+    setFormValues({
+      isCompleted: true,
+      value: 9
+    },
+    {account:{...formData}});
   }
 
   return (

@@ -5,25 +5,27 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import ComboBox from "../ui/comboBox"
 import FormElement from "../ui/form-item"
 import { Checkbox } from "@/components/ui/checkbox"
-import { checkGroupData } from "@/lib/form-data"
+import { checkGroupData, branches, comboBoxData } from "@/lib/form-data"
 import { useForm } from "react-hook-form"
 import FormFooterButtons from "../form-footer"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { ProgramSchema } from "@/lib/validation-schema"
 import { useRouter } from "next/navigation"
+import { useFormData } from "@/lib/form-contexts"
 
 export default function Program({style}) {
   const router = useRouter();
+  const {setFormValues} = useFormData();
 
-  const comboBoxData = [
-    {label:'Caregiving', value:'cg'},
-    {label:'Information and Communication Technology', value:'ict'}
-  ];
+  const onSubmit = (formData) => {
 
-  const onSubmit = (data) => {
-    console.log(data);
+    setFormValues({
+      isCompleted: true,
+      value: 2
+    },
+    formData)
+
     router.push(`?page=${3}`);
-
   }
   const form = useForm({
     resolver: zodResolver(ProgramSchema),
@@ -50,8 +52,9 @@ export default function Program({style}) {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="caloocan">Caloocan</SelectItem>
-                    <SelectItem value="apalit">Apalit</SelectItem>
+                    {branches.map(branch => (
+                      <SelectItem value={branch.value} key={branch.value}> {branch.label}</SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
                 <FormDescription>

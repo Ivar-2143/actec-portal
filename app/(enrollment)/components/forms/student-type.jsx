@@ -17,19 +17,17 @@ export default function StudentType({style}) {
 
     const handleClick = (value) =>{
         router.replace(`?${new URLSearchParams({page:currentPage,type:value})}`)
-        // setStudentType(value);
-        //form.setValue('student_type',value);
+        
     }
 
     const handlesubmit = (e) => {
         e.preventDefault();
+        
         setFormValues({
-            pages:[{
-                isCompleted: true,
-                value: 1,
-            }],
-            fields:{student_type: studentType}
-        });
+            isCompleted:true,
+            value:1
+        },
+        {student_type: studentType})
 
         router.push(`?${new URLSearchParams({page:parseInt(currentPage)+1})}`);
     }

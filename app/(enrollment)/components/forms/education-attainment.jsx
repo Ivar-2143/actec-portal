@@ -8,16 +8,24 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { EducationSchema } from '@/lib/validation-schema'
+import { useFormData } from '@/lib/form-contexts'
+
 
 export default function EducationAttainment({style}) {
   const form = useForm({
     resolver: zodResolver(EducationSchema)
   });
   const router = useRouter();
+  const {setFormValues} = useFormData();
 
   const onSubmit = (formData) => {
     console.log(formData);
-
+  
+    setFormValues({
+      isCompleted: true,
+      value: 6
+    },
+    formData)
     router.push(`?${new URLSearchParams({page:7})}`);
 
   }

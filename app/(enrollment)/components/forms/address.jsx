@@ -18,13 +18,12 @@ export default function Address({style}) {
 
   const onSubmit = (formData) => {
     console.log(formData);
+    
     setFormValues({
-      pages:[{
-          isCompleted: true,
-          value: 4,
-      }],
-      fields:{address: formData}
-    });
+      isCompleted: true,
+      value:4
+    },
+    {address:{...formData}})
 
     router.push(`?${new URLSearchParams({page:5})}`);
   }
@@ -39,8 +38,8 @@ export default function Address({style}) {
           </div>
           <FormElement fieldName='floor/Unit/Room number' optional={true} hint=''/>
           <FormElement fieldName='barangay' hint='Barangay'/>
-          <FormElement fieldName='district' hint='House No.'/>
-          <FormElement fieldName='municipality' hint='House No.'/>
+          <FormElement fieldName='district' hint=''/>
+          <FormElement fieldName='municipality' hint=''/>
           <FormElement fieldName='zip code' hint='3-4 digits' style="sm:w-1/2"/>
           <FormFooterButtons>
             Next

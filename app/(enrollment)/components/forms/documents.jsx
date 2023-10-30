@@ -4,21 +4,27 @@ import FormFooterButtons from '../form-footer'
 import Dropzone from '../ui/dropzone'
 import { IdeaBulbIcon } from '@/public/assets/icons'
 import Image from 'next/image'
-import {useForm } from 'react-hook-form'
+import { useForm} from 'react-hook-form'
 import { captureImageInstructions } from '@/lib/form-data'
 import { Form } from '@/components/ui/form'
 import { useRouter } from 'next/navigation'
+import { useFormData } from '@/lib/form-contexts'
 
 export default function Documents({style}) {
   
   const form = useForm();
   const router = useRouter();
+  const {setFormValues} = useFormData();
   //const image = useWatch({name: 'birth-certificate'})
   const card = 'flex flex-col gap-2 relative'
-  const image = "";
+  const image = form.watch('birth-certificate');
 
-  const onSubmit = (data) =>{
-    console.log(data)
+  const onSubmit = (formData) =>{
+    setFormValues({
+      isCompleted: true,
+      value: 7
+    }, formData);
+
     router.push(`?${new URLSearchParams({page:8})}`)
   }
 
@@ -67,7 +73,7 @@ export default function Documents({style}) {
               </div>
             </div> 
           </div>
-          <FormFooterButtons>
+          <FormFooterButtons disable={!image}>
               Next
           </FormFooterButtons>
         </form>

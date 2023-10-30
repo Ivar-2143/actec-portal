@@ -7,15 +7,21 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ContactSchema } from "@/lib/validation-schema";
+import { useFormData } from "@/lib/form-contexts";
 
 export default function ContactInfo({style}) {
   const form = useForm({
     resolver: zodResolver(ContactSchema)
   });
   const router = useRouter();
+  const {setFormValues} = useFormData();
 
   const onSubmit = (formData) =>{
-    console.log(formData);
+
+    setFormValues({
+      isCompleted:true,
+      value: 5
+    },formData);
 
     router.push(`?${new URLSearchParams({page:6})}`);
   }
