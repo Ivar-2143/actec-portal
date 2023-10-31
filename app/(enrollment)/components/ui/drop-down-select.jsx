@@ -3,18 +3,19 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useFormContext } from "react-hook-form";
 
 
-export default function SelectFormElement({data,accessorKey,label,placeholder}) {
+export default function SelectFormElement({data,accessorKey,label,placeholder,defaultValue = undefined,className = {}}) {
     const form = useFormContext(); 
-    
 
   return (
+    
     <FormField
         control={form.control}
         name={accessorKey}
         render={({ field }) => (
-            <FormItem>
-                <FormLabel>{label}</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+            <FormItem className={className.item}>
+                
+                <FormLabel className={className.label}>{label}</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={defaultValue || field.value}>
                 <FormControl>
                     <SelectTrigger>
                     <SelectValue placeholder={`Select ${placeholder}`} />
@@ -23,7 +24,7 @@ export default function SelectFormElement({data,accessorKey,label,placeholder}) 
                 <SelectContent>
                     {data.map( item => (
                         <SelectItem key={item.value} value={item.value}>
-                            {item.label}
+                            {item.label || item.title}
                         </SelectItem>
                     )
                     )}

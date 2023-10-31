@@ -41,17 +41,21 @@ import { useFormContext } from "react-hook-form"
         { label: "Chinese", value: "zh" },
         
 */
-export default function ComboBox({fieldName, desc='',data}) {
+export default function ComboBox({fieldName, desc='',data,className={}, value=null}) {
     const label = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
     const form = useFormContext();
+    
+    if(value != null || value != undefined){
+        form.setValue(fieldName, value);
+    }
 
   return (
     <FormField
         control={form.control}
         name={fieldName}
         render={({ field }) => (
-            <FormItem className="flex flex-col">
-                <FormLabel>{label}</FormLabel>
+            <FormItem className={`flex flex-col ${className.item}`}>
+                <FormLabel className={className.label}>{label}</FormLabel>
                 <Popover>
                     <PopoverTrigger asChild>
                         <FormControl>
