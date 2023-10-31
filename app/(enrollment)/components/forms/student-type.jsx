@@ -38,17 +38,21 @@ export default function StudentType({style}) {
             <h4 className='text-lg font-bold text-company my-2'>What kind of student are you?</h4>
             <form onSubmit={handlesubmit}>
                 <div className='flex flex-col gap-2 w-full relative
-                    sm:flex-row md:gap-6
-                '>
+                    sm:flex-row md:gap-6 
+                    lg:flex-col xl:flex-row
+                    lg:gap-2 xl:gap-6
+                '>  
                     {studentTypes.map(student =>{
                         return (
                             <StudentTypeCard
                                 key={student.value}
                                 style={`flex flex-row justify-between items-center gap-2
                                 px-4 py-2 bg-white w-full rounded-md relative
-                                h-[120px]
+                                h-[120px] min-[1100px]:min-w-[182px]
                                 sm:h-[auto] sm:pb-[16px]
                                 sm:flex-col sm:gap-4
+                                lg:flex-row
+                                xl:flex-col
                                 `}
                                 student={student}
                                 click={handleClick}

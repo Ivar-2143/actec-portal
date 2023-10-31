@@ -12,7 +12,9 @@ export default function StudentTypeCard({student, style,click, selected}) {
             <div className='flex flex-row gap-2 justify-start items-center 
                                     w-full rounded-md relative
                                     h-full
-                                    sm:flex-col '>
+                                    sm:flex-col
+                                    lg:flex-row
+                                    xl:flex-col '>
                 <Image 
                     src={img}
                     sizes='(max-width:164px),(max-height:160px)'
@@ -21,7 +23,8 @@ export default function StudentTypeCard({student, style,click, selected}) {
                     className='relative h-[96px] w-[96px]
                         sm:h-[128px] sm:w-[128px]
                         md:h-[140px] md:w-[140px]
-                        lg:h-[160px] lg:w-[160px] lg:max-w[160px]
+                        lg:h-[96px] lg:w-[96px]
+                        xl:h-[160px] xl:w-[160px] xl:max-w[160px]
                     '
                 />
                 <div>
