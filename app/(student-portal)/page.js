@@ -1,11 +1,9 @@
-import Image from 'next/image'
 import { columns } from '../columns'
 import { DataTable } from '@/components/ui/data-table'
 import { Applicants } from '../_data/Applicants'
 import { redirect } from 'next/navigation'
 
 export default function Home() {
-redirect('/onboarding');
 
   return (
     <main className="mx-6 my-10
