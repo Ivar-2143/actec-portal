@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* #region */
 .nav-container{
     @apply
     lg:relative 
@@ -69,8 +71,15 @@ svg:not(:root){
         group-[.nav-collapsed]/container:md:invisible
     ;
 }
+/* #endregion */
 
-/* ---- HEADER STYLES ---- */
+
+
+
+
+
+/** ---- HEADER STYLES ---- */
+/* #region */
 .header{
     @apply
         flex flex-col
@@ -154,8 +163,49 @@ svg:not(:root){
     ;
 }
 
+/* #endregion */
+
+
+
+
+
+
+/** --- ONBOARDING STYLES ---*/
+
+.onboard-content{
+    @apply
+        relative w-full 
+    ;
+}
+.onboard-footer{
+    @apply
+        h-auto flex max-h-40 min-h-[64px] mt-16
+        
+    ;
+}
+
+.summary-value{
+    @apply
+        font-light text-darkGray
+    ;
+}
+
+.summary-title{
+    @apply
+        capitalize font-medium text-darkGray
+    ;
+}
+
+
+
+
+
+
+
+
 
 /* * SHADCN UI STYLES */
+/* #region */
 
 @layer base {
   :root {
@@ -212,3 +262,5 @@ svg:not(:root){
     @apply bg-background text-foreground;
   }
 }
+
+/* #endregion */

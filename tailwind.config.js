@@ -21,6 +21,7 @@ module.exports = {
         lightCompany: '#AACDF8',
         transparentCompany: 'rgba(20,115,230,0.2)',
         companyAlt: '#1D5599',
+        betterGreen: '#46C296',
         darkGreen:'#70B309',
         lightGreen: '#A5FF19',
         warning: '#FFB904',
@@ -71,12 +72,12 @@ module.exports = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: { height: 0, opacity: 0},
+          to: { height: "var(--radix-accordion-content-height)", opacity:1 },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
+          from: { height: "var(--radix-accordion-content-height)", opacity:1 },
+          to: { height: 0, opacity: 0},
         },
       },
       animation: {
