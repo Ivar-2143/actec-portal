@@ -2,7 +2,7 @@
 import { redirect } from 'next/navigation'
 import FormStepper from '../components/form-stepper'
 import PageHeader from '../components/ui/page-header'
-import FormProvider from '@/lib/form-contexts'
+import FormProvider, { AccordionStateProvider } from '@/lib/form-contexts'
 import { StudentType, Program, AboutYou, Address, ContactInfo, EducationAttainment, Summary, CreateAccount, Documents } from '../components/forms'
 
 export default function Onboarding({params,searchParams}) {
@@ -15,8 +15,8 @@ export default function Onboarding({params,searchParams}) {
   return (
     <main className='flex flex-col gap-2 lg:flex-row h-full w-full relative'>
       <FormStepper page={currentPage} />
-      <div className='w-full px-6 relative z-0
-                lg:px-[104px] lg:py-16'>
+      <div className='w-full lg:w-[calc(100%-300px)] px-6 relative z-0
+                lg:px-[104px] lg:py-16 h-full lg:overflow-x-auto'>
           <PageHeader page={currentPage}/>
           <FormProvider>
             <StudentType style={currentPage!=1? 'hidden' : ''} />
@@ -26,7 +26,9 @@ export default function Onboarding({params,searchParams}) {
             <ContactInfo style={currentPage!=5? 'hidden': ''} />
             <EducationAttainment style={currentPage!=6? 'hidden': ''} />
             <Documents style={currentPage!=7? 'hidden': ''}/>
-            <Summary style={currentPage!=8? 'hidden': ''} />
+            <AccordionStateProvider>
+              <Summary style={currentPage!=8? 'hidden': ''} />
+            </AccordionStateProvider>
             <CreateAccount style={currentPage!=9? 'hidden': ''} />
           </FormProvider>
       </div>
