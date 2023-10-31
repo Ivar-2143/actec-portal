@@ -1,0 +1,1 @@
+export {default as BlueWaveSVG} from './blue-wave.svg';

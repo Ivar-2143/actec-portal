@@ -2,26 +2,265 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+/* #region */
+.nav-container{
+    @apply
+    lg:relative 
+    top-0 left-0 h-screen w-0 m-0
+    lg:w-24
+    ;
 }
 
-@media (prefers-color-scheme: dark) {
+.mobile-nav{
+    @apply
+        px-4
+        w-screen bg-white h-full z-50
+        absolute overflow-auto top-0 left-0
+        sm:w-[428px]
+        lg:hidden
+    ;
+}
+
+.side-nav{
+    @apply
+        hidden lg:flex flex-col justify-between
+        relative   
+        w-[248px] h-full bg-white
+        duration-200
+    ;
+}
+.nav-collapsed{
+    @apply w-24;
+}
+
+.portalLinks, .accountLinks{
+    @apply
+    flex flex-col my-2 gap-2
+    lg:my-4 lg:gap-4
+    ;
+}
+
+.sidenav-icon{
+    @apply
+    flex items-center gap-4 grow-0 shrink-0
+    text-2xl
+    p-3 mx-5 rounded-md text-gray
+
+    lg:text-[32px]
+
+    hover:bg-company hover:text-white
+    group-[.nav-collapsed]/container:md:w-14
+    group-[.nav-collapsed]/container:md:mx-5
+
+    ;
+}
+svg:not(:root){
+    overflow:visible;
+}
+
+.active-link{
+    @apply
+    bg-company text-white
+    ;
+}
+
+.nav-icon-label{
+    @apply
+        text-xs font-bold uppercase
+        group-[.nav-collapsed]/container:md:invisible
+    ;
+}
+/* #endregion */
+
+
+
+
+
+
+/** ---- HEADER STYLES ---- */
+/* #region */
+.header{
+    @apply
+        flex flex-col
+        w-full
+    ;
+}
+
+.header-bar{
+    @apply
+        flex justify-between items-center
+        w-full px-6 h-20 bg-company text-white
+        
+        lg:bg-plat md:pr-16 md:pl-14
+    ;
+}
+
+.mobile-crumb{
+    @apply
+        flex my-2
+    ;
+}
+
+.left-side{
+    @apply
+        flex items-center gap-4 text-3xl
+    ;
+}
+.right-side{
+    @apply
+        flex items-center gap-4 text-2xl
+    ;
+}
+
+.user-header-btn{
+    @apply
+        flex
+        bg-companyAlt
+        rounded-full
+    ;
+}
+
+.circle{
+    @apply
+        w-12 h-12 bg-white rounded-full
+    ;
+}
+.circle-user-info{
+    @apply
+        flex flex-col justify-center items-center
+        text-xs px-3
+    ;
+}
+
+.crumbs{
+    @apply
+        flex gap-2 items-center capitalize text-gray text-xs mx-6
+        md:max-lg:mx-14
+        lg:my-10 lg:text-base
+    ;
+}
+
+
+.crumbs > svg{
+    @apply
+        align-middle text-center mx-auto
+        scale-75 z-[-1]
+        w-4 h-4
+        lg:w-8 lg:h-8
+        lg:z-0
+        
+    ;
+}
+
+.crumbs > svg:not(:root){
+    overflow:invisible;
+}
+.crumbs > svg > path{
+    @apply
+        -translate-x-1 -translate-y-1
+        lg:translate-x-1 lg:translate-y-1
+    ;
+}
+
+/* #endregion */
+
+
+
+
+
+
+/** --- ONBOARDING STYLES ---*/
+
+.onboard-content{
+    @apply
+        relative w-full 
+    ;
+}
+.onboard-footer{
+    @apply
+        h-auto flex max-h-40 min-h-[64px] mt-16
+        
+    ;
+}
+
+.summary-value{
+    @apply
+        font-light text-darkGray
+    ;
+}
+
+.summary-title{
+    @apply
+        capitalize font-medium text-darkGray
+    ;
+}
+
+
+
+
+
+
+
+
+
+/* * SHADCN UI STYLES */
+/* #region */
+
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+/* #endregion */
