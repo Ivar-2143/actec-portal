@@ -30,23 +30,17 @@
         duration-200
     ;
 }
+
 .nav-collapsed{
     @apply w-24;
 }
 
-.portalLinks, .accountLinks{
-    @apply
-    flex flex-col my-2 gap-2
-    lg:my-4 lg:gap-4
-    ;
-}
 
 .sidenav-icon{
     @apply
     flex items-center gap-4 grow-0 shrink-0
-    text-2xl
-    p-3 mx-5 rounded-md text-gray
-
+    mx-5 rounded-md text-gray
+    text-2xl p-3
     lg:text-[32px]
 
     hover:bg-company hover:text-white
@@ -55,6 +49,16 @@
 
     ;
 }
+
+
+
+.portalLinks, .accountLinks{
+    @apply
+    flex flex-col my-2 gap-2
+    lg:my-4 lg:gap-4
+    ;
+}
+
 svg:not(:root){
     overflow:visible;
 }
@@ -71,6 +75,28 @@ svg:not(:root){
         group-[.nav-collapsed]/container:md:invisible
     ;
 }
+
+
+@media screen and (max-height:800px) and (min-width:1024px){
+    .actec-logo-media-handler{
+        font-size:16px;
+    }
+
+    .nav-collapsed{
+        @apply w-[72px];
+    }
+
+    .sidenav-icon{
+        @apply
+        text-xl p-1
+        group-[.nav-collapsed]/container:md:w-7
+        h-[28px]
+        overflow-hidden
+        ;
+    }
+}
+
+
 /* #endregion */
 
 
@@ -182,6 +208,22 @@ svg:not(:root){
         h-auto flex max-h-40 min-h-[64px] mt-16
         
     ;
+}
+.side-stepper{
+    gap: 40px;
+    @media(max-height:900px){
+        margin-top:24px;
+        gap:20px;
+        
+    }
+}
+.side-stepper-children{
+    margin-top:24px;
+    gap:16px;
+    @media(max-height:900px){
+        margin-top:16px;
+        gap:8px;
+    }
 }
 
 .summary-value{

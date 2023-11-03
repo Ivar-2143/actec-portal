@@ -1,19 +1,19 @@
-import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/navigation';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 
 export default function SideBarIcon({icon,label,link}) {
-    const pathname = usePathname();
+  const pathname = usePathname()
 
   return (
-    <Link href={link}>
+    <Link href={link} >
         <div className={`sidenav-icon ${pathname === link? 'active-link': ''}`}>
             {icon} 
             <span className='nav-icon-label'>
-                    {label}
+              {label}
             </span> 
-         </div>
+        </div>
     </Link>
   )
 }

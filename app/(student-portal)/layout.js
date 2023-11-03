@@ -16,13 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`
-        flex bg-plat w-screen h-screen relative overflow-auto
+        flex bg-plat w-screen h-screen relative overflow-hidden
         ${inter.className}
       `}>
         <div className='nav-container z-50'>
           <SideNav />
         </div>
-        <div className='w-full lg:w-[calc(100%-96px)] relative z-0'>
+        <div className='w-full lg:w-[calc(100%-96px)] relative z-0 overflow-y-auto'>
           <Header />
           {children}
         </div>
