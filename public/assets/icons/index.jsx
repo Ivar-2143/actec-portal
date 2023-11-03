@@ -20,3 +20,5 @@ export {default as IdeaBulbIcon} from './navigation/ic_idea-bulb.svg';
 export {default as PenIcon} from './buttons/ic_pen.svg';
 export {default as TrashIcon} from './buttons/ic_trash.svg';
 export {default as CheckIcon} from './status/ic_check.svg';
+export {default as FilledRemoveIcon} from './status/ic_delete-close-remove-reject.svg';
+export {default as PendingIcon} from './status/ic_pending.svg';
