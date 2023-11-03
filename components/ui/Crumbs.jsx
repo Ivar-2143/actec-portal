@@ -11,7 +11,7 @@ export default function Crumbs() {
     <div className='crumbs'>
         <h2 className="text-base md:text-xl font-bold text-darkGray">Student Portal</h2>
         <ArrowIcon className="text-sm" />
-        {path === '/' ? 'home' : path}
+        {path === '/' ? 'home' : path.split('/')}
     </div>
   )
 }
