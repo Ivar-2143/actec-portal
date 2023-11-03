@@ -5,7 +5,7 @@ import { format } from "date-fns";
 
 export default function CalendarWidget() {
   return (
-    <div className="rounded-md border bg-white flex justify-center ">
+    <div className="rounded-lg border bg-white flex justify-center ">
         <Calendar
         disableNavigation
             mode="single"
