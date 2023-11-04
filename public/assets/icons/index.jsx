@@ -22,3 +22,5 @@ export {default as TrashIcon} from './buttons/ic_trash.svg';
 export {default as CheckIcon} from './status/ic_check.svg';
 export {default as FilledRemoveIcon} from './status/ic_delete-close-remove-reject.svg';
 export {default as PendingIcon} from './status/ic_pending.svg';
+export {default as WarningIcon} from './status/ic_warning.svg';
+export {default as DiscountTagIcon} from './status/ic_tag.svg';
