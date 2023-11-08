@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 export default function Crumbs() {
     const path = usePathname();
     const paths = path.split('/');
-    console.log(paths)
 
   return (
     <div className='crumbs capitalize'>
