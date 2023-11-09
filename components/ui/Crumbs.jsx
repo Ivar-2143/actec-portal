@@ -8,7 +8,7 @@ export default function Crumbs() {
     const paths = path.split('/');
 
   return (
-    <div className='crumbs capitalize'>
+    <div className='crumbs'>
         <h2 className="text-base md:text-xl font-bold text-darkGray">Student Portal</h2>
         
         {path === '/' ? 
@@ -21,7 +21,9 @@ export default function Crumbs() {
             return (
               <>
                 <ArrowIcon className='text-sm'/>
-                {path}
+                <span className="capitalize">
+                  {path.replace('-',' ')}
+                </span>
               </>
             )
           }
