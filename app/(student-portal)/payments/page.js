@@ -40,7 +40,7 @@ function Payments() {
         <WarningIcon className='text-2xl' />
         <span>Paid already? Don&#39;t forget to submit your payment receipt. Click <Link href='/payments/receipt-form' className="underline text-company">here</Link ></span>
       </div>
-      <Card className='p-0 flex flex-col gap-4'>
+      <Card className='p-4 flex flex-col gap-4'>
         <CardTitle variant="small">Balance</CardTitle>
         <Card className='bg-warning flex flex-col p-2 gap-2'>
           <span><b>Due: </b>{format(addDays(new Date(),7),"PP")}</span>
