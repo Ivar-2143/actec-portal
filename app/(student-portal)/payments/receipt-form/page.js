@@ -3,6 +3,7 @@ import Card from "@/components/shared/card";
 import CardTitle from "@/components/shared/card-title";
 import { currencyPhilippinePeso } from "@/lib/functions/currency-philippine-peso";
 import { ArrowIcon } from "@/public/assets/icons";
+import PaymentForm from "./receipt-forms/payment-form";
 
 export default function ReceiptForm() {
   return (
@@ -23,6 +24,7 @@ export default function ReceiptForm() {
         <CardTitle variant="small">
           Payment
         </CardTitle>
+        <PaymentForm />
       </Card>
     </main>
   )
