@@ -1,5 +1,6 @@
 import { Calendar } from "@/components/ui/calendar";
 import getDayToString from "@/lib/functions/get-day-to-string";
+import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 
 
@@ -20,11 +21,12 @@ export default function CalendarWidget() {
   )
 }
 
-export function MobileCalendar(){
+export function MobileCalendar({className}){
+  const style = 'lg:hidden';
   return(
-    <div className="lg:hidden">
+    <div className={cn(style,className)}>
       <h6>Today is {getDayToString(new Date().getDay())},</h6>
-      <h4>{format(new Date(),"PPP")}</h4>
+      <h4 className="font-medium text-xl">{format(new Date(),"PPP")}</h4>
     </div>
   )
 }
