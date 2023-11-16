@@ -20,6 +20,7 @@ import DataTablePagination from "./data-table-pagination"
 
 export function DataTable({ columns, data }) {
 const [rowSelection, setRowSelection] = useState({})
+//! GET ROW SELECTION KEYS TO GET THE ID {1:true, 2:true} or alternative table.getFilteredSelectedRowModel().rows
 
   const table = useReactTable({
     data,
@@ -110,13 +111,13 @@ const [rowSelection, setRowSelection] = useState({})
                           {flexRender(row.getAllCells()[0].column.columnDef.cell, row.getAllCells()[0].getContext())}
                           {convertID(flexRender(row.getAllCells()[1].column.columnDef.cell, row.getAllCells()[1].getContext()).props.getValue())}
                         </div>
-                        <MoreVerticalIcon />
+                        {flexRender(row.getAllCells()[6].column.columnDef.cell, row.getAllCells()[6].getContext())}
                     </div>
                 <div className="flex flex-col gap-2 px-4 py-2 bg-white">
                   {row.getVisibleCells().map(cell =>{
                     
                     // * Skips the cells of the ID, select, and actions
-                    if(cell.column.id === 'Applicant_ID' || cell.column.id === "select"){
+                    if(cell.column.id === 'Applicant_ID' || cell.column.id === "select" || cell.column.id === "actions"){
                       return null;
                     }
                     

@@ -1,5 +1,6 @@
 "use client"
 
+import DataTableRowActions from "@/components/table/data-table-row-actions"
 import { Checkbox } from "@/components/ui/checkbox"
 
 export const columns = [
@@ -42,6 +43,9 @@ export const columns = [
     {
       accessorKey: "Progress",
       header: "Progress"
+    },{
+      id: "actions",
+      cell: ({row}) => <DataTableRowActions row={row} />
     }
   ]
   
