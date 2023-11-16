@@ -3,6 +3,7 @@
 import { Button } from "../ui/button"
 
 export default function DataTablePagination({table}) {
+  
   return (
     <div className="fixed bottom-0 left-0 w-full px-6 flex justify-between items-center bg-white shadow-[0px_-4px_6px_-1px_rgba(0,0,0,0.1)]
       sm:relative sm:shadow-none sm:bg-transparent sm:px-0
@@ -19,7 +20,10 @@ export default function DataTablePagination({table}) {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => table.previousPage()}
+            onClick={() => {
+              document.getElementById('main-screen').scrollTop = 0;
+              table.previousPage()
+            }}
             disabled={!table.getCanPreviousPage()}
           >
             Previous
@@ -27,7 +31,10 @@ export default function DataTablePagination({table}) {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => table.nextPage()}
+            onClick={() => {
+              document.getElementById('main-screen').scrollTop = 0;
+              table.nextPage()
+            }}
             disabled={!table.getCanNextPage()}
           >
             Next
