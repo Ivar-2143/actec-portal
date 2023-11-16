@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         <div className='nav-container z-50'>
           <SideNav />
         </div>
-        <div className='w-full lg:w-[calc(100%-96px)] relative z-0 overflow-y-auto'>
+        <div className='w-full lg:w-[calc(100%-96px)] relative z-0 overflow-y-auto' id='main-screen'>
           <Header />
           {children}
         </div>
