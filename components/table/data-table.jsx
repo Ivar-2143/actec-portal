@@ -16,6 +16,7 @@ import {
   TableRow
 } from "@/components/ui/table"
 import { MoreVerticalIcon } from "lucide-react"
+import DataTablePagination from "./data-table-pagination"
 
 export function DataTable({ columns, data }) {
 const [rowSelection, setRowSelection] = useState({})
@@ -140,32 +141,7 @@ const [rowSelection, setRowSelection] = useState({})
         )}
       </div>
       <div className="h-16 sm:hidden"></div>
-      <div className="fixed bottom-0 left-0 w-full px-6 flex justify-between items-center bg-white shadow-[0px_-4px_6px_-1px_rgba(0,0,0,0.1)]
-      sm:relative sm:shadow-none sm:bg-transparent sm:px-0
-      ">
-        <div className="flex text-sm text-muted-foreground sm:ml-4 py-2">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>
-        <div className="flex items-center justify-end space-x-2 py-4">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Previous
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Next
-          </Button>
-          </div>
-      </div>
+      <DataTablePagination table={table} />
     </>
   )
 }
