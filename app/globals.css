@@ -164,7 +164,7 @@ svg:not(:root){
 }
 .circle-user-info{
     @apply
-        flex flex-col justify-center items-center
+        hidden sm:flex flex-col justify-center items-center
         text-xs px-3
     ;
 }
