@@ -9,6 +9,7 @@ import { MoreVerticalIcon } from "lucide-react"
 
 export default function DataTableRowActions({row}){
     const {toast} = useToast();
+    const isArchived = row.original.isArchived ?? false;
 
     return(
         <DropdownMenu>
@@ -23,8 +24,12 @@ export default function DataTableRowActions({row}){
             <DropdownMenuContent align='end' className="w-[160px]">
                 <DropdownMenuItem>View</DropdownMenuItem>
                 <DropdownMenuItem>Edit</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={()=> {toast({description: "Item has been moved to Archived list."})}}>Archive</DropdownMenuItem>
+                {!isArchived && (
+                    <>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem onClick={()=> {toast({description: "Item has been moved to Archived list."})}}>Archive</DropdownMenuItem>
+                    </>
+                )}
             </DropdownMenuContent>
         </DropdownMenu>
     )
