@@ -24,3 +24,5 @@ export {default as FilledRemoveIcon} from './status/ic_delete-close-remove-rejec
 export {default as PendingIcon} from './status/ic_pending.svg';
 export {default as WarningIcon} from './status/ic_warning.svg';
 export {default as DiscountTagIcon} from './status/ic_tag.svg';
+export {default as ArchiveIcon} from './buttons/ic_archive.svg';
+export {default as CircleMinusIcon} from './buttons/ic_circle-minus.svg';
