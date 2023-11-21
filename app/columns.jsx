@@ -36,6 +36,10 @@ export const columns = [
     {
       accessorKey: "Strand_Course",
       header: "Course"
+    },{
+      accessorKey: "isArchived",
+      enableGlobalFilter: true,
+      enableHiding: true
     },
     {
       accessorKey: "Student_Type",
