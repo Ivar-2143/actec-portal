@@ -3,6 +3,8 @@ import {
   flexRender,
   getCoreRowModel,
   getPaginationRowModel,
+  getFilteredRowModel,
+  getSortedRowModel,
   useReactTable
 } from "@tanstack/react-table"
 import { useState } from "react"
@@ -17,8 +19,12 @@ import {
 } from "@/components/ui/table"
 import { MoreVerticalIcon } from "lucide-react"
 import DataTablePagination from "./data-table-pagination"
+import { fuzzyFilter } from "./data-table-functions"
+import DataTableToolbar from "./data-table-toolbar"
 
-export function DataTable({ columns, data }) {
+export function DataTable({ columns, data, children}) {
+const [globalFilter, setGlobalFilter] = useState("");
+const [columnFilters, setColumnFilters] = useState([]);
 const [rowSelection, setRowSelection] = useState({})
 //! GET ROW SELECTION KEYS TO GET THE ID {1:true, 2:true} or alternative table.getFilteredSelectedRowModel().rows
 
@@ -27,11 +33,26 @@ const [rowSelection, setRowSelection] = useState({})
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getSortedRowModel: getSortedRowModel(),
     onRowSelectionChange: setRowSelection,
+    onColumnFiltersChange: setColumnFilters,
+    onGlobalFilterChange: setGlobalFilter,
+    globalFilterFn: fuzzyFilter,
     state:{
-        rowSelection
+        rowSelection,
+        globalFilter,
+        columnFilters
     },
+    filterFns:{
+      fuzzy: fuzzyFilter,
+    },
+    initialState:{
+      columnVisibility: {"isArchived": false}
+    }
   })
+  
+  console.log()
 
   const convertID = (userID) => {
     let id = '';
@@ -44,6 +65,10 @@ const [rowSelection, setRowSelection] = useState({})
 
   return (
     <>
+      
+      <DataTableToolbar className='pb-5' table={table}>
+        {children}
+      </DataTableToolbar>
       <div className="hidden sm:block rounded-md border bg-white">
         <Table>
           <TableHeader>
@@ -111,7 +136,7 @@ const [rowSelection, setRowSelection] = useState({})
                           {flexRender(row.getAllCells()[0].column.columnDef.cell, row.getAllCells()[0].getContext())}
                           {convertID(flexRender(row.getAllCells()[1].column.columnDef.cell, row.getAllCells()[1].getContext()).props.getValue())}
                         </div>
-                        {flexRender(row.getAllCells()[6].column.columnDef.cell, row.getAllCells()[6].getContext())}
+                        {flexRender(row.getAllCells()[7].column.columnDef.cell, row.getAllCells()[7].getContext())}
                     </div>
                 <div className="flex flex-col gap-2 px-4 py-2 bg-white">
                   {row.getVisibleCells().map(cell =>{
@@ -138,7 +163,7 @@ const [rowSelection, setRowSelection] = useState({})
             </div>
           )})
         ):(
-          <span> No Results. </span>
+          <span className="flex justify-center py-2 border-b border-r border-gray relative"> No Results. </span>
         )}
       </div>
       <div className="h-16 sm:hidden"></div>
