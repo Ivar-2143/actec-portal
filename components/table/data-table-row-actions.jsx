@@ -9,7 +9,7 @@ import { MoreVerticalIcon } from "lucide-react"
 
 export default function DataTableRowActions({row}){
     const {toast} = useToast();
-    const isArchived = row.original.isArchived ?? false;
+    const isArchived = row.original.isArchived ?? false;  
 
     return(
         <DropdownMenu>
