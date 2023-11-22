@@ -15,6 +15,6 @@ export const ViewTypeOptions = [{
     label: 'Semestral'
 },{
     columnID: 'isArchived',
-    value: true,
+    value: 'archived',
     label: 'Archived'
 }]
