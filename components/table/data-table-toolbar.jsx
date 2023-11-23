@@ -6,22 +6,22 @@ import { Search } from 'lucide-react';
 
 export default function DataTableToolbar({table, className,children}) {
   return (
-    <div className={cn('flex flex-col gap-4',className)}>
-        <div className='flex items-center gap-2'>
-            {children}
-            <DataTableTabs title='Data Filter' options={ViewTypeOptions}/>
-        </div>
-        <div
-         className='flex items-center border-b px-3 bg-white rounded-sm py-2 focus-within:ring-2 ring-gray
-         '>
+    <div className={cn('inline-flex w-full flex-wrap flex-row-reverse sm:flex-row sm:gap-x-4 gap-y-4 items-center justify-between max-[370px]:justify-start pt-2',className)}>
+      <DataTableTabs
+        className=''
+        title='Data Filter' options={ViewTypeOptions}/>
+      {children}
+      <div className='flex items-center w-full border-b px-3 bg-white rounded-sm py-2 focus-within:ring-2 ring-gray sm:w-1/3 sm:place-items-end border-solid sm:mr-4
+      sm:ring-2'>
             <Search className='opacity-50 mr-2 h-6 w-6 shrink-0'/>
             <input
                 placeholder='Search...'
                 value={table.getState().globalFilter}
                 onChange={e=> table.setGlobalFilter(e.target.value)}
-                className='bg-none focus:outline-none'
+                className='sm:text-sm bg-none focus:outline-none w-full'
             />
         </div>
+        
     </div>
   )
 }

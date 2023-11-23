@@ -66,60 +66,62 @@ const [rowSelection, setRowSelection] = useState({})
   return (
     <>
       
-      <DataTableToolbar className='pb-5' table={table}>
-        {children}
-      </DataTableToolbar>
-      <div className="hidden sm:block rounded-md border bg-white">
-        <Table>
-          <TableHeader>
-            {table.getHeaderGroups().map(headerGroup => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map(header => {
+      <div className='sm:bg-white sm:rounded-md'>
+        <DataTableToolbar className='pb-5' table={table}>
+          {children}
+        </DataTableToolbar>
+        <div className="hidden sm:block rounded-md border bg-white">
+          <Table>
+            <TableHeader>
+              {table.getHeaderGroups().map(headerGroup => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map(header => {
+                    
+                    return (
+                      <TableHead key={header.id}>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                      </TableHead>
+                    )
+                  })}
+                </TableRow>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map(row =>{
                   
                   return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </TableHead>
-                  )
-                })}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map(row =>{
-                
-                return (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map(cell => (
-                    <TableCell key={cell.id}>
-                      {
-                        (cell.column.id === 'Applicant_ID')?
-                        convertID(flexRender(row.getAllCells()[1].column.columnDef.cell, row.getAllCells()[1].getContext()).props.getValue())
-                        :
-                        flexRender(cell.column.columnDef.cell, cell.getContext())
-                      }
-                    </TableCell>
-                  ))}
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && "selected"}
+                  >
+                    {row.getVisibleCells().map(cell => (
+                      <TableCell key={cell.id}>
+                        {
+                          (cell.column.id === 'Applicant_ID')?
+                          convertID(flexRender(row.getAllCells()[1].column.columnDef.cell, row.getAllCells()[1].getContext()).props.getValue())
+                          :
+                          flexRender(cell.column.columnDef.cell, cell.getContext())
+                        }
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                )})
+              ) : (
+                <TableRow>
+                  <TableCell colSpan={columns.length} className="h-24 text-center">
+                    No results.
+                  </TableCell>
                 </TableRow>
-              )})
-            ) : (
-              <TableRow>
-                <TableCell colSpan={columns.length} className="h-24 text-center">
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
+              )}
+            </TableBody>
+          </Table>
+        </div>
       </div>
       {/* MOBILE TABLE */}
       <div className="sm:hidden border-gray border-l border-t rounded-md relative overflow-clip">
