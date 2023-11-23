@@ -41,46 +41,46 @@ export default function ManageRequestButtons() {
             className='w-9/12
             max-[370px]:w-full sm:w-auto sm:inline-flex gap-x-2
             sm:ml-4'>
-            <Button
-                variant='default'
-                size='sm'
-                className='
-                rounded-sm w-full
-                sm:rounded-full sm:w-auto'
-                onClick={()=>
-                    toast({
-                    title: 'Status Changed',
-                    description:'Releasing Documents'})}
-            >
-                <CheckIcon className='text-white w-4 h-4 mr-2' />
-                Release Document
-            </Button>
-            <Button
-                variant='outline'
-                className='hidden sm:inline-flex rounded-full'
-                size='sm'
-                onClick={()=>
-                    toast({
+                <Button
+                    variant='default'
+                    size='sm'
+                    className='
+                    rounded-sm w-full
+                    sm:rounded-full sm:w-auto'
+                    onClick={()=>
+                        toast({
                         title: 'Status Changed',
-                        description: 'Denying Documents'
-                    })
-                }
-            >
-                Deny
-            </Button>
-            <Button
-                variant='destructive'
-                size='sm'
-                className='hidden sm:inline-flex rounded-full '
-                onClick={()=>
-                    toast({
-                        description: 'Moving Data to Archived list.... '
-                    })
-                }
-            >
-                Archive
-            </Button>
-        </div>
+                        description:'Releasing Documents'})}
+                >
+                    <CheckIcon className='text-white w-4 h-4 mr-2' />
+                    Release Document
+                </Button>
+                <Button
+                    variant='outline'
+                    className='hidden sm:inline-flex rounded-full'
+                    size='sm'
+                    onClick={()=>
+                        toast({
+                            title: 'Status Changed',
+                            description: 'Denying Documents'
+                        })
+                    }
+                >
+                    Deny
+                </Button>
+                <Button
+                    variant='destructive'
+                    size='sm'
+                    className='hidden sm:inline-flex rounded-full '
+                    onClick={()=>
+                        toast({
+                            description: 'Moving Data to Archived list.... '
+                        })
+                    }
+                >
+                    Archive
+                </Button>
+            </div>
 
             
         </>
