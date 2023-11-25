@@ -22,7 +22,7 @@ import DataTablePagination from "./data-table-pagination"
 import { fuzzyFilter } from "./data-table-functions"
 import DataTableToolbar from "./data-table-toolbar"
 
-export function DataTable({ columns, data, children}) {
+export function DataTable({ columns, data, children,buttonSet}) {
 const [globalFilter, setGlobalFilter] = useState("");
 const [columnFilters, setColumnFilters] = useState([]);
 const [rowSelection, setRowSelection] = useState({})
@@ -67,9 +67,7 @@ const [rowSelection, setRowSelection] = useState({})
     <>
       
       <div className='sm:bg-white sm:rounded-md'>
-        <DataTableToolbar className='pb-5' table={table}>
-          {children}
-        </DataTableToolbar>
+        <DataTableToolbar className='pb-5' table={table} buttonSet={buttonSet} />
         <div className="hidden sm:block rounded-md border bg-white">
           <Table>
             <TableHeader>
