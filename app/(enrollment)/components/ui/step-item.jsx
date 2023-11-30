@@ -46,17 +46,17 @@ export function Step({title, step, page,children}) {
     <div className='flex flex-col w-full'>
         <div className='step-icon flex w-full justify-between items-center'>
           <div className='flex justify-center items-center gap-2'>
-            <h4 className={`px-2 py-0 rounded-full border-[3px] h-[32px] align-middle font-bold
+            <h4 className={`px-2 py-0 rounded-full border-[3px] h-[32px] align-middle font-bold text-[clamp(0.75em,18px,1.3rem)] 
               ${
-              active? ' border-company text-company': 
+              active? ' border-company text-company ': 
               completed? ' hidden':  
               'border-gray text-gray'}
             `}>{step}</h4>
             {completed && (
-              <CheckIcon className='text-3xl' />
+              <CheckIcon className='text-[clamp(1.75em,30px,3rem)] ' />
             )}
             <span className={
-              `uppercase font-bold 
+              `uppercase font-bold text-[clamp(0.75em,18px,1.3rem)] 
               ${active? 'text-company':
               completed? 'text-plat':'text-gray'}`
             }>{title}</span>
@@ -67,7 +67,7 @@ export function Step({title, step, page,children}) {
           )}
         </div>
         {(children && active)&& (
-          <div className={`${children? 'ml-10 mt-6 flex flex-col gap-4' : ''}`}>
+          <div className={`${children? 'ml-10 flex flex-col side-stepper-children' : ''}`}>
             {children}
           </div>
         )}

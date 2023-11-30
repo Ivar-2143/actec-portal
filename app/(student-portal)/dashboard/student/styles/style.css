@@ -1,0 +1,27 @@
+
+.custom-grid{
+    display: grid;
+    grid-template-areas:"calendar calendar"
+    "schedule schedule"
+    "grades grades"
+    "payment payment"
+    "blogs blogs";
+    gap: 1rem;
+}
+
+.calendar{
+    grid-area: calendar;
+}
+
+.schedule-card{
+    grid-area: schedule;
+}
+.grades-card{
+    grid-area: grades;
+}
+.payment-card{
+    grid-area:payment;
+}
+.blogs-card{
+    grid-area:blogs
+}

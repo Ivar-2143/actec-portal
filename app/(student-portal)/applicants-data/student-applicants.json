@@ -1,0 +1,802 @@
+[
+  {
+    "Applicant_ID": 1899830,
+    "Strand_Course": "Manager",
+    "Student_Name": "Flora Bednar",
+    "Student_Type": "shs",
+    "Progress": 50,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 9293054,
+    "Strand_Course": "Analyst",
+    "Student_Name": "Mrs. Casey Roob",
+    "Student_Type": "shortcourse",
+    "Progress": 73,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 3131099,
+    "Strand_Course": "Orchestrator",
+    "Student_Name": "Ricardo McDermott",
+    "Student_Type": "shs",
+    "Progress": 25,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 8405475,
+    "Strand_Course": "Analyst",
+    "Student_Name": "Julia Hoeger MD",
+    "Student_Type": "shs",
+    "Progress": 14,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 8933617,
+    "Strand_Course": "Developer",
+    "Student_Name": "Lloyd White",
+    "Student_Type": "semestral",
+    "Progress": 67,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 7917490,
+    "Strand_Course": "Specialist",
+    "Student_Name": "Sophia Carter",
+    "Student_Type": "shortcourse",
+    "Progress": 57,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 9159541,
+    "Strand_Course": "Manager",
+    "Student_Name": "Sally Ziemann",
+    "Student_Type": "shortcourse",
+    "Progress": 4,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 2253438,
+    "Strand_Course": "Technician",
+    "Student_Name": "Brian Senger",
+    "Student_Type": "semestral",
+    "Progress": 23,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 5777374,
+    "Strand_Course": "Architect",
+    "Student_Name": "Pamela Maggio",
+    "Student_Type": "shortcourse",
+    "Progress": 5,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 4862534,
+    "Strand_Course": "Supervisor",
+    "Student_Name": "Charlene Hyatt",
+    "Student_Type": "shortcourse",
+    "Progress": 49,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 4711550,
+    "Strand_Course": "Orchestrator",
+    "Student_Name": "Dennis Klocko",
+    "Student_Type": "shortcourse",
+    "Progress": 15,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 6541024,
+    "Strand_Course": "Consultant",
+    "Student_Name": "Rodolfo Osinski",
+    "Student_Type": "shortcourse",
+    "Progress": 24,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 8028299,
+    "Strand_Course": "Associate",
+    "Student_Name": "Mathew Weber-Howe",
+    "Student_Type": "shs",
+    "Progress": 61,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 7096740,
+    "Strand_Course": "Developer",
+    "Student_Name": "Lois Morar",
+    "Student_Type": "shortcourse",
+    "Progress": 71,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5223575,
+    "Strand_Course": "Assistant",
+    "Student_Name": "Josefina Ortiz",
+    "Student_Type": "semestral",
+    "Progress": 21,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 3761181,
+    "Strand_Course": "Planner",
+    "Student_Name": "Pamela Beatty",
+    "Student_Type": "shortcourse",
+    "Progress": 49,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 7498492,
+    "Strand_Course": "Designer",
+    "Student_Name": "Omar Morar-Schneider",
+    "Student_Type": "shs",
+    "Progress": 68,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 3697721,
+    "Strand_Course": "Specialist",
+    "Student_Name": "John Nikolaus",
+    "Student_Type": "shortcourse",
+    "Progress": 24,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 2225862,
+    "Strand_Course": "Representative",
+    "Student_Name": "Emma Reichert-Bauch",
+    "Student_Type": "shortcourse",
+    "Progress": 61,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 6399208,
+    "Strand_Course": "Engineer",
+    "Student_Name": "Allen Carter",
+    "Student_Type": "shs",
+    "Progress": 28,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 2380357,
+    "Strand_Course": "Associate",
+    "Student_Name": "Noah Kuhn",
+    "Student_Type": "semestral",
+    "Progress": 15,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 2741243,
+    "Strand_Course": "Planner",
+    "Student_Name": "Bennie Koelpin",
+    "Student_Type": "shortcourse",
+    "Progress": 100,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 1749406,
+    "Strand_Course": "Engineer",
+    "Student_Name": "Rachel Nienow",
+    "Student_Type": "semestral",
+    "Progress": 42,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 4064268,
+    "Strand_Course": "Associate",
+    "Student_Name": "Angel Swift-Hermann",
+    "Student_Type": "shortcourse",
+    "Progress": 11,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 9237837,
+    "Strand_Course": "Assistant",
+    "Student_Name": "Alejandro Abshire",
+    "Student_Type": "semestral",
+    "Progress": 9,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5574173,
+    "Strand_Course": "Planner",
+    "Student_Name": "Gina Hickle",
+    "Student_Type": "shs",
+    "Progress": 66,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 7063051,
+    "Strand_Course": "Strategist",
+    "Student_Name": "Chad Balistreri Jr.",
+    "Student_Type": "shortcourse",
+    "Progress": 21,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 2943161,
+    "Strand_Course": "Specialist",
+    "Student_Name": "Jessica Paucek-Stokes",
+    "Student_Type": "shortcourse",
+    "Progress": 3,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 3500264,
+    "Strand_Course": "Technician",
+    "Student_Name": "Charlotte Auer",
+    "Student_Type": "shortcourse",
+    "Progress": 8,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 5038279,
+    "Strand_Course": "Assistant",
+    "Student_Name": "Scott Reichert",
+    "Student_Type": "semestral",
+    "Progress": 9,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1985874,
+    "Strand_Course": "Engineer",
+    "Student_Name": "Allen Bergnaum",
+    "Student_Type": "shs",
+    "Progress": 69,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 3693497,
+    "Strand_Course": "Supervisor",
+    "Student_Name": "Terence Crist DVM",
+    "Student_Type": "semestral",
+    "Progress": 57,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1751208,
+    "Strand_Course": "Facilitator",
+    "Student_Name": "Phillip Senger",
+    "Student_Type": "shs",
+    "Progress": 2,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 8368774,
+    "Strand_Course": "Facilitator",
+    "Student_Name": "Ms. Cecelia Christiansen",
+    "Student_Type": "semestral",
+    "Progress": 2,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 2744438,
+    "Strand_Course": "Strategist",
+    "Student_Name": "Jon Wyman",
+    "Student_Type": "shs",
+    "Progress": 25,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 1479242,
+    "Strand_Course": "Consultant",
+    "Student_Name": "Diane Will",
+    "Student_Type": "shortcourse",
+    "Progress": 91,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 8837058,
+    "Strand_Course": "Associate",
+    "Student_Name": "Rickey Cummings II",
+    "Student_Type": "semestral",
+    "Progress": 37,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 2112353,
+    "Strand_Course": "Technician",
+    "Student_Name": "Evelyn Metz",
+    "Student_Type": "semestral",
+    "Progress": 97,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 8283044,
+    "Strand_Course": "Planner",
+    "Student_Name": "Frederick Kris",
+    "Student_Type": "semestral",
+    "Progress": 24,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5466165,
+    "Strand_Course": "Associate",
+    "Student_Name": "Dr. Alonzo Huel",
+    "Student_Type": "semestral",
+    "Progress": 96,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 7499716,
+    "Strand_Course": "Supervisor",
+    "Student_Name": "Peggy Herman",
+    "Student_Type": "shortcourse",
+    "Progress": 22,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 9878466,
+    "Strand_Course": "Assistant",
+    "Student_Name": "Darren Dare",
+    "Student_Type": "shs",
+    "Progress": 29,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 9834928,
+    "Strand_Course": "Specialist",
+    "Student_Name": "Susan Crooks Sr.",
+    "Student_Type": "semestral",
+    "Progress": 91,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 3928597,
+    "Strand_Course": "Officer",
+    "Student_Name": "Rickey Tromp",
+    "Student_Type": "semestral",
+    "Progress": 56,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 9027768,
+    "Strand_Course": "Officer",
+    "Student_Name": "Andrew Carter",
+    "Student_Type": "shs",
+    "Progress": 65,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 2338733,
+    "Strand_Course": "Liaison",
+    "Student_Name": "Yolanda Kreiger",
+    "Student_Type": "semestral",
+    "Progress": 87,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1978393,
+    "Strand_Course": "Agent",
+    "Student_Name": "Casey Swift",
+    "Student_Type": "semestral",
+    "Progress": 49,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5958614,
+    "Strand_Course": "Agent",
+    "Student_Name": "Kathleen Graham",
+    "Student_Type": "shortcourse",
+    "Progress": 38,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 2375260,
+    "Strand_Course": "Consultant",
+    "Student_Name": "Ivan Haag",
+    "Student_Type": "shortcourse",
+    "Progress": 96,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 7777057,
+    "Strand_Course": "Consultant",
+    "Student_Name": "Susan Hand Sr.",
+    "Student_Type": "shortcourse",
+    "Progress": 97,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 9836879,
+    "Strand_Course": "Consultant",
+    "Student_Name": "Dr. Dana Oberbrunner",
+    "Student_Type": "shs",
+    "Progress": 21,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 4674267,
+    "Strand_Course": "Engineer",
+    "Student_Name": "Moses Kutch",
+    "Student_Type": "shortcourse",
+    "Progress": 60,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 5194690,
+    "Strand_Course": "Facilitator",
+    "Student_Name": "Wade Littel",
+    "Student_Type": "semestral",
+    "Progress": 92,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 6470210,
+    "Strand_Course": "Producer",
+    "Student_Name": "Leslie Howe",
+    "Student_Type": "semestral",
+    "Progress": 62,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 7520434,
+    "Strand_Course": "Supervisor",
+    "Student_Name": "Dr. Charlene Bartoletti",
+    "Student_Type": "shs",
+    "Progress": 28,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 5185847,
+    "Strand_Course": "Supervisor",
+    "Student_Name": "Genevieve Wolff",
+    "Student_Type": "semestral",
+    "Progress": 23,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 3203396,
+    "Strand_Course": "Specialist",
+    "Student_Name": "Darla Dooley",
+    "Student_Type": "shortcourse",
+    "Progress": 8,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 3879276,
+    "Strand_Course": "Consultant",
+    "Student_Name": "Dexter Gottlieb",
+    "Student_Type": "semestral",
+    "Progress": 56,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 8307138,
+    "Strand_Course": "Director",
+    "Student_Name": "Miss Cecelia Huels",
+    "Student_Type": "shortcourse",
+    "Progress": 56,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1580977,
+    "Strand_Course": "Manager",
+    "Student_Name": "Doris Marquardt",
+    "Student_Type": "shs",
+    "Progress": 35,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5685352,
+    "Strand_Course": "Associate",
+    "Student_Name": "Sophia Johnson",
+    "Student_Type": "shortcourse",
+    "Progress": 45,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 4869658,
+    "Strand_Course": "Architect",
+    "Student_Name": "Russell Lesch",
+    "Student_Type": "semestral",
+    "Progress": 41,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 7340554,
+    "Strand_Course": "Liaison",
+    "Student_Name": "Timothy Beer",
+    "Student_Type": "shs",
+    "Progress": 100,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 4029027,
+    "Strand_Course": "Consultant",
+    "Student_Name": "Alberta Fritsch",
+    "Student_Type": "shortcourse",
+    "Progress": 41,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1753557,
+    "Strand_Course": "Facilitator",
+    "Student_Name": "Christian Fisher",
+    "Student_Type": "shs",
+    "Progress": 9,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 6313715,
+    "Strand_Course": "Assistant",
+    "Student_Name": "Mr. Terrence Brekke",
+    "Student_Type": "shs",
+    "Progress": 61,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 5092469,
+    "Strand_Course": "Producer",
+    "Student_Name": "Kurt Kutch",
+    "Student_Type": "shortcourse",
+    "Progress": 79,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 2115785,
+    "Strand_Course": "Consultant",
+    "Student_Name": "Francisco Satterfield",
+    "Student_Type": "shs",
+    "Progress": 96,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 3987728,
+    "Strand_Course": "Assistant",
+    "Student_Name": "Megan O'Kon",
+    "Student_Type": "semestral",
+    "Progress": 2,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 1068595,
+    "Strand_Course": "Orchestrator",
+    "Student_Name": "Sam Will",
+    "Student_Type": "shs",
+    "Progress": 78,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 5058604,
+    "Strand_Course": "Orchestrator",
+    "Student_Name": "Derrick Shanahan",
+    "Student_Type": "shortcourse",
+    "Progress": 47,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 9688916,
+    "Strand_Course": "Representative",
+    "Student_Name": "Jennie Emmerich",
+    "Student_Type": "shortcourse",
+    "Progress": 61,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1706297,
+    "Strand_Course": "Officer",
+    "Student_Name": "Sheila Thompson",
+    "Student_Type": "semestral",
+    "Progress": 63,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5248347,
+    "Strand_Course": "Associate",
+    "Student_Name": "Stacey Kuvalis I",
+    "Student_Type": "shortcourse",
+    "Progress": 19,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1031616,
+    "Strand_Course": "Officer",
+    "Student_Name": "Marjorie Dooley PhD",
+    "Student_Type": "shs",
+    "Progress": 65,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1405208,
+    "Strand_Course": "Planner",
+    "Student_Name": "Sherry Leuschke",
+    "Student_Type": "semestral",
+    "Progress": 3,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5793411,
+    "Strand_Course": "Specialist",
+    "Student_Name": "Julia Williamson",
+    "Student_Type": "shortcourse",
+    "Progress": 28,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 8072899,
+    "Strand_Course": "Administrator",
+    "Student_Name": "Winifred Casper",
+    "Student_Type": "shs",
+    "Progress": 68,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 4965693,
+    "Strand_Course": "Architect",
+    "Student_Name": "Julius Renner",
+    "Student_Type": "semestral",
+    "Progress": 52,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5095721,
+    "Strand_Course": "Associate",
+    "Student_Name": "Willard Dooley",
+    "Student_Type": "shortcourse",
+    "Progress": 96,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 8227504,
+    "Strand_Course": "Director",
+    "Student_Name": "Agnes Hand",
+    "Student_Type": "shs",
+    "Progress": 66,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 2603474,
+    "Strand_Course": "Planner",
+    "Student_Name": "Beth Strosin",
+    "Student_Type": "semestral",
+    "Progress": 40,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 4100302,
+    "Strand_Course": "Developer",
+    "Student_Name": "Debbie Sawayn",
+    "Student_Type": "shs",
+    "Progress": 38,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 6800405,
+    "Strand_Course": "Administrator",
+    "Student_Name": "Lois Powlowski",
+    "Student_Type": "shs",
+    "Progress": 51,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 8094526,
+    "Strand_Course": "Coordinator",
+    "Student_Name": "Lynda Dach I",
+    "Student_Type": "semestral",
+    "Progress": 14,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5538317,
+    "Strand_Course": "Executive",
+    "Student_Name": "Rhonda Dickens",
+    "Student_Type": "shs",
+    "Progress": 48,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5638280,
+    "Strand_Course": "Coordinator",
+    "Student_Name": "Harvey Hand",
+    "Student_Type": "shs",
+    "Progress": 36,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 4678877,
+    "Strand_Course": "Consultant",
+    "Student_Name": "Harvey Doyle",
+    "Student_Type": "shortcourse",
+    "Progress": 28,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 6405628,
+    "Strand_Course": "Engineer",
+    "Student_Name": "Johnathan Schiller",
+    "Student_Type": "semestral",
+    "Progress": 27,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 4563408,
+    "Strand_Course": "Planner",
+    "Student_Name": "Dr. Ernest Baumbach",
+    "Student_Type": "semestral",
+    "Progress": 14,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 3855985,
+    "Strand_Course": "Strategist",
+    "Student_Name": "Miss Julia Jacobs",
+    "Student_Type": "semestral",
+    "Progress": 48,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 6750891,
+    "Strand_Course": "Specialist",
+    "Student_Name": "Dr. Willie Shanahan",
+    "Student_Type": "shs",
+    "Progress": 61,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1139323,
+    "Strand_Course": "Liaison",
+    "Student_Name": "Whitney Predovic",
+    "Student_Type": "semestral",
+    "Progress": 80,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 3509917,
+    "Strand_Course": "Officer",
+    "Student_Name": "Miss Grace Lindgren",
+    "Student_Type": "shs",
+    "Progress": 68,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 5150178,
+    "Strand_Course": "Assistant",
+    "Student_Name": "Geneva Corkery",
+    "Student_Type": "shs",
+    "Progress": 18,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 2607355,
+    "Strand_Course": "Planner",
+    "Student_Name": "Sergio Gerlach",
+    "Student_Type": "shortcourse",
+    "Progress": 84,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 6518896,
+    "Strand_Course": "Producer",
+    "Student_Name": "Dr. Cesar Grady-Balistreri",
+    "Student_Type": "semestral",
+    "Progress": 64,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1345983,
+    "Strand_Course": "Strategist",
+    "Student_Name": "Bernice Anderson",
+    "Student_Type": "shortcourse",
+    "Progress": 65,
+    "isArchived": false
+  },
+  {
+    "Applicant_ID": 1171993,
+    "Strand_Course": "Planner",
+    "Student_Name": "Mr. Marc Rippin",
+    "Student_Type": "shs",
+    "Progress": 73,
+    "isArchived": true
+  },
+  {
+    "Applicant_ID": 6832501,
+    "Strand_Course": "Director",
+    "Student_Name": "Bert Christiansen",
+    "Student_Type": "semestral",
+    "Progress": 28,
+    "isArchived": true
+  }
+]

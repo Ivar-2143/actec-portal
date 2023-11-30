@@ -13,7 +13,6 @@ import FormElement from "../../ui/form-item";
 import { Checkbox } from "@/components/ui/checkbox";
 import EditingDialog from "./section-dialog-and-buttons";
 import { useEditingState } from "@/lib/form-contexts";
-import { useConfirmRedirectIfDirty } from "@/lib/hooks/confirm-redirect";
 
 export default function SummaryProg({data,className}) {
     const {isEditing, formID, handleEditing} = useEditingState()

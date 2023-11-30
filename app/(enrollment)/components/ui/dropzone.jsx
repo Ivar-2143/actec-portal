@@ -4,7 +4,7 @@ import { DropArrowIcon, UploadIcon } from "@/public/assets/icons";
 import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 
-export default function Dropzone({className}) {
+export default function Dropzone({className,fieldName='birth-certificate'}) {
     const [image, setImage] = useState({});
     const form = useFormContext();
 
@@ -20,7 +20,7 @@ export default function Dropzone({className}) {
         )
         console.log(image);
         form.setValue(
-            'birth-certificate',
+            fieldName,
             acceptedFile.map(
                 file => Object.assign(
                     file,
