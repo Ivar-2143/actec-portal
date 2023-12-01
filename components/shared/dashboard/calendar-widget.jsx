@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 
 
-export default function CalendarWidget() {
+export default function CalendarWidget({className}) {
   return (
-    <div className="rounded-lg border bg-white flex justify-center ">
+    <div className={cn("rounded-lg border bg-white flex justify-center", className)}>
         <Calendar
         disableNavigation
             mode="single"
