@@ -39,13 +39,13 @@ export default function RegistrarPage({className}) {
               </div>
             </Card>
             <Card className='col-span-5 row-span-2'>
-              
+              <CardTitle>Admission</CardTitle>
             </Card>
             <Card className='col-span-4 row-span-1'>
-              
+              <CardTitle>Latest Requests</CardTitle>
             </Card>
             <Card className='col-span-4 row-span-1'>
-
+              <CardTitle>Documents</CardTitle>
             </Card>
         </div>
         <DashboardRightContent />
