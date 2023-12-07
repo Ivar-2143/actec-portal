@@ -4,7 +4,8 @@ import CalendarWidget from '@/components/shared/dashboard/calendar-widget'
 import CardTitle from '@/components/shared/card-title'
 import DashboardRightContent from '@/components/shared/dashboard/dashboard-right-content'
 import { cn } from '@/lib/utils'
-import { ArrowUp } from 'lucide-react'
+import { ArrowUp, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function RegistrarPage({className}) {
   const students = [{
@@ -42,10 +43,15 @@ export default function RegistrarPage({className}) {
               <CardTitle>Admission</CardTitle>
             </Card>
             <Card className='col-span-4 row-span-1'>
-              <CardTitle>Latest Requests</CardTitle>
+              <CardTitle className='flex justify-between items-baseline'>
+                Latest Requests <Link className='flex items-center text-primary text-sm uppercase font-semibold' href='#'>View All <ChevronRight className='font-bold w-6 h-6'/></Link>
+              </CardTitle>
+              <LatestRequests />
             </Card>
             <Card className='col-span-4 row-span-1'>
-              <CardTitle>Documents</CardTitle>
+              <CardTitle className='flex justify-between items-baseline'>
+                Documents <Link className='flex items-center text-primary text-sm uppercase font-semibold' href='#'>View All <ChevronRight className='font-bold w-6 h-6'/></Link>
+              </CardTitle>
             </Card>
         </div>
         <DashboardRightContent />
@@ -65,6 +71,62 @@ export function StudentCountCard({student, className}){
       </div>
       <span className={cn('uppercase lg:text-[8px] min-[1330px]:text-[10px] w-full min-w-[144px] font-light', type === 'Total'? 'text-[#d9d9d9]' : 'text-gray')}> from last enrollment</span>
     </div>
+  )
+}
+
+export function LatestRequests({className}){
+  const columns = [{
+    Header: 'Name',
+    accessorKey: 'full_name'
+  },{
+    Header: 'Documents',
+    accessorKey: 'documents',
+    style: 'flex justify-center'
+  }];
+  const data =[{
+    id: 1001,
+    full_name: 'Ky Angeles',
+    documents: 1
+  },{
+    id: 1002,
+    full_name: 'Adrian Jeluz',
+    documents: 3
+  }]
+
+  return (
+    <CustomTable className='mt-2' columns={columns} data={data}/>
+  )
+
+}
+
+export function CustomTable({columns,data, className}){
+  const celLStyle = 'py-2 px-2';
+
+  return (
+      <div className={cn('flex w-full', className)}>
+        <table className=' w-full'>
+          <thead className='border-b border-border'>
+            <tr>
+              {columns.map(column =>(
+                <td 
+                  key={column.accessorKey}
+                  className={cn(column.style ?? column.style, celLStyle,'uppercase')}>
+                  {column.Header}
+                </td>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {data.map(request => (
+              <tr key={request.id}>
+                {columns.map(column =>(
+                  <td className={cn(column.style ?? column.style, celLStyle)} key={column.accessorKey}>{request[column.accessorKey]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
   )
 }
 
