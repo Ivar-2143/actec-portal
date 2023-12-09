@@ -6,6 +6,7 @@ import DashboardRightContent from '@/components/shared/dashboard/dashboard-right
 import { cn } from '@/lib/utils'
 import { ArrowUp, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
+import { format } from 'date-fns'
 
 export default function RegistrarPage({className}) {
   const students = [{
@@ -39,8 +40,9 @@ export default function RegistrarPage({className}) {
                 ))}
               </div>
             </Card>
-            <Card className='col-span-5 row-span-2'>
+            <Card className='col-span-5 row-span-2 w-full'>
               <CardTitle>Admission</CardTitle>
+              <AdmissionBoard />
             </Card>
             <Card className='col-span-4 row-span-1'>
               <CardTitle className='flex justify-between items-baseline'>
@@ -69,9 +71,48 @@ export function StudentCountCard({student, className}){
         <span>{count}</span>
         <span className={cn('flex items-center justify-center w-20 rounded-full py-1 px-1 lg:text-base min-[1330px]text-lg text-lightGreen',type === 'Total'? 'bg-[rgba(255,255,255,0.25)]' : 'bg-[rgba(165,255,55,0.25)]')}><ArrowUp className='w-6 h-6' /> {added}</span>
       </div>
-      <span className={cn('uppercase lg:text-[8px] min-[1330px]:text-[10px] w-full min-w-[144px] font-light', type === 'Total'? 'text-[#d9d9d9]' : 'text-gray')}> from last enrollment</span>
+      <span className={cn('uppercase lg:text-[8px] min-[1330px]:text-[10px] w-full min-w-[144px] font-light text-ellipsis overflow-hidden', type === 'Total'? 'text-[#d9d9d9]' : 'text-gray')}> from last enrollment</span>
     </div>
   )
+}
+export function AdmissionBoard({className}){
+  const columns = [{
+    Header: 'Name',
+    accessorKey: 'full_name'
+  },{
+    Header: 'date',
+    accessorKey: 'date'
+  },{
+    Header: 'Completion',
+    accessorKey: 'completion',
+  },{
+    Header: 'Status',
+    accessorKey: 'status'
+  }]
+
+  const data =[{
+    full_name: 'Adrian Jeluz',
+    date: '10/10/2023',
+    completion: '70%',
+    status: 'to review',
+  },{
+    full_name: 'Ky Angeles',
+    date: '7/7/2023',
+    completion: '100%',
+    status: 'to enroll',
+  },{
+    full_name: 'Aries Maghanay',
+    date: '6/6/2023',
+    completion: '50',
+    status: 'in progress',
+  },{
+    full_name: 'Popol and Kupa',
+    date: '5/5/2023',
+    completion: '30',
+    status: 'in progress',
+  }]
+
+  return(<CustomTable columns={columns} data={data} className='mt-2' />)
 }
 
 export function LatestRequests({className}){
@@ -100,17 +141,17 @@ export function LatestRequests({className}){
 }
 
 export function CustomTable({columns,data, className}){
-  const celLStyle = 'py-2 px-2';
+  const cellStyle = 'py-2 px-2 overflow-hidden text-ellipsis';
 
   return (
       <div className={cn('flex w-full', className)}>
-        <table className=' w-full'>
+        <table className='table-auto w-full'>
           <thead className='border-b border-border'>
             <tr>
               {columns.map(column =>(
                 <td 
                   key={column.accessorKey}
-                  className={cn(column.style ?? column.style, celLStyle,'uppercase')}>
+                  className={cn(column.style ?? column.style, cellStyle,'uppercase')}>
                   {column.Header}
                 </td>
               ))}
@@ -120,7 +161,7 @@ export function CustomTable({columns,data, className}){
             {data.map(request => (
               <tr key={request.id}>
                 {columns.map(column =>(
-                  <td className={cn(column.style ?? column.style, celLStyle)} key={column.accessorKey}>{request[column.accessorKey]}</td>
+                  <td className={cn(column.style ?? column.style, cellStyle)} key={column.accessorKey}>{column.accessorKey == 'date' ? format(new Date(request[column.accessorKey]),'PP') : request[column.accessorKey] }</td>
                 ))}
               </tr>
             ))}
