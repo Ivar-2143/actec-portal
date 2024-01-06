@@ -45,7 +45,7 @@ export default function ManageGradeButtons() {
                 Add Grades
             </Button>
             <Button
-                variant='outline'
+                variant='strong'
                 className='hidden sm:inline-flex rounded-full'
                 size='sm'
                 onClick={()=>
@@ -54,11 +54,11 @@ export default function ManageGradeButtons() {
                     })
                 }
             >
-                <PenUnderlineIcon classname='w-4 h-4 mr-2'/>
+                <PenUnderlineIcon className='w-4 h-4 mr-2'/>
                 Bulk Edit
             </Button>
             <Button
-                variant='destructive'
+                variant='strong'
                 size='sm'
                 className='hidden sm:inline-flex rounded-full '
                 onClick={()=>
