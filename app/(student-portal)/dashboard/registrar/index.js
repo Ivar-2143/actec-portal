@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { ArrowUp, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import { format } from 'date-fns'
+import { Button } from '@/components/ui/button'
 
 export default function RegistrarPage({className}) {
   const students = [{
@@ -46,14 +47,26 @@ export default function RegistrarPage({className}) {
             </Card>
             <Card className='col-span-4 row-span-1'>
               <CardTitle className='flex justify-between items-baseline'>
-                Latest Requests <Link className='flex items-center text-primary text-sm uppercase font-semibold' href='#'>View All <ChevronRight className='font-bold w-6 h-6'/></Link>
+                <span className="truncate">Latest Requests</span> <Link className='flex items-center text-primary text-sm uppercase font-semibold min-w-max ml-2' href='#'>View All <ChevronRight className='font-bold w-6 h-6'/></Link>
               </CardTitle>
               <LatestRequests />
             </Card>
             <Card className='col-span-4 row-span-1'>
               <CardTitle className='flex justify-between items-baseline'>
-                Documents <Link className='flex items-center text-primary text-sm uppercase font-semibold' href='#'>View All <ChevronRight className='font-bold w-6 h-6'/></Link>
+                <spanc className="truncate">Documents</spanc> <Link className='flex items-center text-primary text-sm uppercase font-semibold ml-2 min-w-max' href='#'>View All <ChevronRight className='font-bold w-6 h-6'/></Link>
               </CardTitle>
+              <div className='flex space-x-2 mt-2'>
+                <div className='flex flex-col justify-between gap-2 w-full'>
+                  <span className='w-full text-[48px] text-white text-center font-semibold py-2 bg-zinc-700 rounded-md'>32</span>
+                  <span>Students</span>
+                  <Button>Remind </Button>
+                </div>
+                <div className='flex flex-col justify-between gap-2 w-full'>
+                  <span className='w-full text-[48px] text-white text-center font-semibold py-2 bg-warning rounded-md'>7</span>
+                  <span>Documents</span>
+                  <Button>Review </Button>
+                </div>
+              </div>
             </Card>
         </div>
         <DashboardRightContent />
@@ -65,26 +78,28 @@ export default function RegistrarPage({className}) {
 export function StudentCountCard({student, className}){
   const {type, count, added} = student;
   return (
-    <div className={cn('rounded-sm py-[10px] px-4 overflow-x-auto',type === 'Total'? 'bg-company text-white' : 'bg-none',className)}>
-      <span className={cn('lg:text-base  min-w-[144px] ', type != 'Total' ? 'text-gray lg:font-medium min-[1330px]:text-lg min-[1330px]:font-semibold' : 'font-medium')}>{type} Students</span>
-      <div className='flex items-center justify-between lg:text-xl min-[1330px]:text-3xl font-semibold min-w-[144px]s'>
+    <div className={cn('rounded-sm py-[10px] px-4 overflow-x-auto truncate',type === 'Total'? 'bg-company text-white' : 'bg-none',className)}>
+      <span className={cn('text-lg min-w-[144px] ', type != 'Total' ? 'text-gray  font-semibold' : 'font-medium')}>{type} Students</span>
+      <div className='flex items-center justify-between lg:text-xl min-[1124px]:text-3xl font-semibold min-w-[144px]s'>
         <span>{count}</span>
-        <span className={cn('flex items-center justify-center w-20 rounded-full py-1 px-1 lg:text-base min-[1330px]text-lg text-lightGreen',type === 'Total'? 'bg-[rgba(255,255,255,0.25)]' : 'bg-[rgba(165,255,55,0.25)]')}><ArrowUp className='w-6 h-6' /> {added}</span>
+        <span className={cn('flex items-center ml-2 max-w-max justify-center w-20 rounded-full py-1 px-2 lg:text-base min-[1330px]text-lg text-lightGreen',type === 'Total'? 'bg-[rgba(255,255,255,0.25)]' : 'bg-[rgba(165,255,55,0.25)]')}><ArrowUp className='w-6 h-6 mr-1  ' /> {added}</span>
       </div>
-      <span className={cn('uppercase lg:text-[8px] min-[1330px]:text-[10px] w-full min-w-[144px] font-light text-ellipsis overflow-hidden', type === 'Total'? 'text-[#d9d9d9]' : 'text-gray')}> from last enrollment</span>
+      <span className={cn('uppercase text-[10px] w-full min-w-[144px] font-light text-ellipsis overflow-hidden', type === 'Total'? 'text-[#d9d9d9]' : 'text-gray')}> from last enrollment</span>
     </div>
   )
 }
 export function AdmissionBoard({className}){
   const columns = [{
     Header: 'Name',
-    accessorKey: 'full_name'
+    accessorKey: 'full_name',
   },{
     Header: 'date',
-    accessorKey: 'date'
+    accessorKey: 'date',
+    style: 'md:hidden lg:hidden min-[1330px]:table-cell'
   },{
     Header: 'Completion',
     accessorKey: 'completion',
+    style: 'truncate max-w-[64px]'
   },{
     Header: 'Status',
     accessorKey: 'status'
@@ -122,7 +137,7 @@ export function LatestRequests({className}){
   },{
     Header: 'Documents',
     accessorKey: 'documents',
-    style: 'flex justify-center'
+    style: 'flex justify-center truncate'
   }];
   const data =[{
     id: 1001,
@@ -141,17 +156,17 @@ export function LatestRequests({className}){
 }
 
 export function CustomTable({columns,data, className}){
-  const cellStyle = 'py-2 px-2 overflow-hidden text-ellipsis';
+  const cellStyle = 'py-2 px-2 overflow-hidden text-ellipsis truncate';
 
   return (
-      <div className={cn('flex w-full', className)}>
+      <div className={cn('flex w-full overflow-x-hidden', className)}>
         <table className='table-auto w-full'>
           <thead className='border-b border-border'>
             <tr>
               {columns.map(column =>(
                 <td 
                   key={column.accessorKey}
-                  className={cn(column.style ?? column.style, cellStyle,'uppercase')}>
+                  className={cn(column.style ?? column.style, cellStyle,'uppercase w-max')}>
                   {column.Header}
                 </td>
               ))}
@@ -159,7 +174,7 @@ export function CustomTable({columns,data, className}){
           </thead>
           <tbody>
             {data.map(request => (
-              <tr key={request.id}>
+              <tr key={request.id} className='w-full'>
                 {columns.map(column =>(
                   <td className={cn(column.style ?? column.style, cellStyle)} key={column.accessorKey}>{column.accessorKey == 'date' ? format(new Date(request[column.accessorKey]),'PP') : request[column.accessorKey] }</td>
                 ))}
