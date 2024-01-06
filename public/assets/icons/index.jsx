@@ -27,3 +27,5 @@ export {default as DiscountTagIcon} from './status/ic_tag.svg';
 export {default as ArchiveIcon} from './buttons/ic_archive.svg';
 export {default as CircleMinusIcon} from './buttons/ic_circle-minus.svg';
 export {default as PenUnderlineIcon} from './buttons/ic_pen-underline.svg';
+export {default as EnrollmentIcon} from './navigation/ic_enrollment.svg';
+
